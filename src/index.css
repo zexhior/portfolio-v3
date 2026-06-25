@@ -16,6 +16,14 @@
   letter-spacing: 2px;
 }
 
+.text-oswald {
+  font-family: "Oswald";
+}
+
+.text-outfit {
+  font-family: "Outfit";
+}
+
 #root {
   font-family: "Outfit";
   background-image: linear-gradient(45deg, #0e0024 0%, #000719 80%, #000f33 100%);
@@ -69,7 +77,7 @@
 
   --primary-foreground: oklch(0.985 0 0);
 
-  --secondary: oklch(0.97 0 0);
+  --secondary: #000719;
 
   --secondary-foreground: oklch(0.205 0 0);
 
