@@ -27,8 +27,8 @@ interface Skill {
 const SkillComponent = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="w-full md:w-1/3 flex p-4">
-      <Card className="w-full bg-secondary hover:shadow-[0_0_5px] hover:scale-105 shadow-slate-300/50 border border-slate-600 text-slate-300 transition-all">
-        <CardContent className="flex flex-col gap-4">{children}</CardContent>
+      <Card className="w-full bg-secondary-800/80 backdrop-blur-xl hover:scale-105 border text-slate-300 transition-all">
+        <CardContent className="flex flex-col gap-4 ">{children}</CardContent>
       </Card>
     </div>
   );
@@ -39,7 +39,10 @@ const SkillContent = ({ skills }: { skills: Skill[] }) => {
     <div className="flex flex-wrap gap-2 ps-2">
       {skills.map((tech) => {
         return (
-          <div className="flex gap-2 items-center text-md bg-primary p-2 rounded-md">
+          <div
+            key={tech.title}
+            className="flex gap-2 items-center text-md bg-primary p-2 rounded-md"
+          >
             {tech.icon}
             <p className="text-md font-semibold">{tech.title}</p>
           </div>
@@ -142,7 +145,7 @@ const Skills = () => {
   return (
     <div>
       <h2 className="text-6xl text-slate-500 font-semibold text-oswald">Compétences</h2>
-      <p className="text-3xl mt-4 mb-5 ms-4">
+      <p className="text-3xl mt-4 mb-10 ms-4">
         Voici les langages, les frameworks et outils que j'utilise pour mon travail
       </p>
       <div className="flex flex-wrap">
