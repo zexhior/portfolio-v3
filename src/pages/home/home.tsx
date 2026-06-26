@@ -2,6 +2,8 @@ import Nav from "@/components/nav";
 import Header from "../header/header";
 import Skills from "../skills/skills";
 import Degrees from "../degrees/degrees";
+import Experiences from "../experiences/experiences";
+import Projects from "../projects/projects";
 
 const Home = () => {
   return (
@@ -10,6 +12,8 @@ const Home = () => {
       <Header />
       <Skills />
       <Degrees />
+      <Projects />
+      <Experiences />
     </div>
   );
 };
