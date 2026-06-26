@@ -35,6 +35,36 @@ const Contacts = () => {
   };
   const size = 80;
 
+  const socialNetworks = [
+    {
+      link: "#facebook",
+      icon: <FaFacebook size={size} />,
+    },
+    {
+      link: "#linkedin",
+      icon: <FaLinkedin size={size} />,
+    },
+    {
+      link: "#github",
+      icon: <FaGithub size={size} />,
+    },
+  ];
+
+  const contacts = [
+    {
+      info: "+261382626428",
+      icon: <FaPhone className="hover:bg-slate-600 transition-all ease-in duration-500" />,
+    },
+    {
+      info: "herizoras1@gmail.com",
+      icon: <FaMailBulk className="hover:bg-slate-600 transition-all ease-in duration-500" />,
+    },
+    {
+      info: "Madagascar, Antananarivo 101",
+      icon: <FaLocationPin className="hover:bg-slate-600 transition-all ease-in duration-500" />,
+    },
+  ];
+
   return (
     <div className="flex w-full my-5">
       <Card className="w-full bg-primary text-slate-100 border border-slate-400 shadow-[0_0_10px] shadow-slate-500">
@@ -46,29 +76,22 @@ const Contacts = () => {
             </div>
             <div className="flex flex-col gap-2 ">
               <div className="flex gap-5 w-full text-slate-400">
-                <a href="#">
-                  <FaFacebook size={size} />
-                </a>
-                <a href="#">
-                  <FaLinkedin size={size} />
-                </a>
-                <a href="#">
-                  <FaGithub size={size} />
-                </a>
+                {socialNetworks.map((socialNetwork) => {
+                  return (
+                    <a key={socialNetwork.link} href={socialNetwork.link}>
+                      {socialNetwork.icon}
+                    </a>
+                  );
+                })}
               </div>
               <div className="flex flex-col gap-2 my-5">
-                <div className="flex items-center gap-2">
-                  <FaPhone />
-                  +261382626428
-                </div>
-                <div className="flex items-center gap-2">
-                  <FaMailBulk />
-                  herizoras1@gmail.com
-                </div>
-                <div className="flex items-center gap-2">
-                  <FaLocationPin />
-                  Madagascar, Antananarivo 101
-                </div>
+                {contacts.map((contact) => {
+                  return (
+                    <div className="flex items-center gap-2">
+                      {contact.icon} {contact.info}
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
