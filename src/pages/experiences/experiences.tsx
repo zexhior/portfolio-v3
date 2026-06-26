@@ -125,7 +125,10 @@ const Experiences = () => {
                 <div className="flex flex-wrap gap-5 my-4">
                   {experience.tech.map((tech) => {
                     return (
-                      <div className="flex items-center gap-2 p-2 bg-primary rounded-md">
+                      <div
+                        key={`${experience.duration}-${tech.tools}`}
+                        className="flex items-center gap-2 p-2 bg-primary rounded-md"
+                      >
                         {tech.icon}
                         {tech.tools}
                       </div>

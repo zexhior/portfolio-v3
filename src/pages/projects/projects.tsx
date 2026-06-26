@@ -4,6 +4,7 @@ import { DiDjango } from "react-icons/di";
 import { SiPostgresql } from "react-icons/si";
 import { BsTypescript } from "react-icons/bs";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const Projects = () => {
   const projects = [
@@ -79,6 +80,7 @@ const Projects = () => {
                         </div>
                       );
                     })}
+                    <Button>Demo Live</Button>
                   </div>
                 </CardContent>
               </Card>

@@ -25,12 +25,12 @@ const Degrees = () => {
       <p className="text-3xl mt-4 mb-10">
         Voici les diplômes academique que j'ai reçu lors de mes études.
       </p>
-      <div className="flex gap-5">
+      <div className="flex flex-col md:flex-row gap-5">
         {degrees.map((degree) => {
           return (
             <Card
               key={degree.title}
-              className="border border-slate-500 bg-secondary text-white p-10"
+              className="border border-slate-500 bg-secondary text-white p-4 md:p-10"
             >
               <CardHeader>
                 <CardTitle className="text-xl font-semibold text-oswald">
