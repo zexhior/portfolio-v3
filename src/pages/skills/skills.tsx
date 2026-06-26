@@ -145,7 +145,7 @@ const Skills = () => {
   return (
     <div>
       <h2 className="text-6xl text-slate-500 font-semibold text-oswald">Compétences</h2>
-      <p className="text-3xl mt-4 mb-10 ms-4">
+      <p className="text-3xl mt-4 mb-10">
         Voici les langages, les frameworks et outils que j'utilise pour mon travail
       </p>
       <div className="flex flex-wrap">
