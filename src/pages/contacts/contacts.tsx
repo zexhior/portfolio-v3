@@ -72,7 +72,7 @@ const Contacts = () => {
           <div className="flex flex-col justify-center items-center w-full md:w-1/2 gap-10">
             <div>
               <h3 className="text-5xl text-oswald text-slate-500">Besoin de mes services!</h3>
-              <p className="text-3xl">N'hesitez pas à me contacter</p>
+              <p className="text-2xl">N'hesitez pas à me contacter</p>
             </div>
             <div className="flex flex-col gap-2 ">
               <div className="flex gap-5 w-full text-slate-400">
