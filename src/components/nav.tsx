@@ -69,7 +69,7 @@ const Nav = () => {
       <div
         className={`${
           scroll > 0 ? "bg-slate-600/50 rounded-full translate-y-1" : "translate-y-0"
-        } mx-auto flex w-full px-5 max-w-290.5 items-center justify-between py-2 lg:px-2 transition-all ease-in duration-75`}
+        } mx-auto flex w-full px-5 md:max-w-4/5 items-center justify-between py-2 md:px-2 transition-all ease-in duration-75`}
       >
         <div className="flex items-center gap-4">
           <p>Logo</p>
