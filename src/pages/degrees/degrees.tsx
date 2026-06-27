@@ -1,4 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { animationFadeIn, animationFadeInRight } from "@/lib/style";
+import { motion } from "framer-motion";
 
 interface IDegrees {
   title: string;
@@ -21,29 +23,33 @@ const Degrees = () => {
 
   return (
     <div className="py-5">
-      <h2 className="text-4xl text-slate-500 font-semibold text-oswald">Parcours</h2>
-      <p className="text-2xl mt-4 mb-10">
+      <motion.h2
+        {...animationFadeInRight}
+        className="text-4xl text-slate-500 font-semibold text-oswald"
+      >
+        Parcours
+      </motion.h2>
+      <motion.p {...animationFadeInRight} className="text-2xl mt-4 mb-10">
         Voici les diplômes academique que j'ai reçu lors de mes études.
-      </p>
-      <div className="flex flex-col md:flex-row gap-5">
+      </motion.p>
+      <motion.div {...animationFadeIn} className="flex flex-col md:flex-row gap-5">
         {degrees.map((degree) => {
           return (
-            <Card
-              key={degree.title}
-              className="border border-slate-500 bg-secondary text-white p-4 md:p-10"
-            >
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold text-oswald">
-                  <p className="text-slate-500">{degree.title}</p>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>{degree.description}</p>
-              </CardContent>
-            </Card>
+            <div key={degree.title} className="h-full">
+              <Card className="border border-slate-500 bg-secondary text-white p-4 md:p-10">
+                <CardHeader>
+                  <CardTitle className="text-xl font-semibold text-oswald">
+                    <p className="text-slate-500">{degree.title}</p>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>{degree.description}</p>
+                </CardContent>
+              </Card>
+            </div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 };
