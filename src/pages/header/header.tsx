@@ -58,7 +58,7 @@ const Header = () => {
         {...animationFadeIn}
         className="w-1/2 hidden md:flex md:justify-center md:items-center"
       >
-        <div className="bg-primary rounded-s-[10%] rounded-e-[50%] overflow-hidden shadow-[0_0_10px] shadow-secondary">
+        <div className="bg-primary/50 backdrop-blur-2xl rounded-s-[10%] rounded-e-[50%] overflow-hidden shadow-[0_0_10px] shadow-secondary">
           <img src={Me} className="h-100" />
         </div>
       </motion.div>
