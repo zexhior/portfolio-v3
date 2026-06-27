@@ -1,6 +1,8 @@
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Me from "@/assets/me.png";
+import { motion } from "framer-motion";
+import { animationFadeIn } from "@/lib/style";
 
 const Header = () => {
   const headerText = [
@@ -27,7 +29,7 @@ const Header = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center w-full relative h-screen">
-      <div className="w-full md:w-1/2">
+      <motion.div {...animationFadeIn} className="w-full md:w-1/2">
         <Carousel
           plugins={[
             Autoplay({
@@ -51,12 +53,15 @@ const Header = () => {
             })}
           </CarouselContent>
         </Carousel>
-      </div>
-      <div className="w-1/2 hidden md:flex md:justify-center md:items-center">
+      </motion.div>
+      <motion.div
+        {...animationFadeIn}
+        className="w-1/2 hidden md:flex md:justify-center md:items-center"
+      >
         <div className="bg-primary rounded-s-[10%] rounded-e-[50%] overflow-hidden shadow-[0_0_10px] shadow-secondary">
           <img src={Me} className="h-100" />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
