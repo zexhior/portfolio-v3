@@ -42,8 +42,8 @@ const Header = () => {
                   key={text.title}
                   className="flex flex-col justify-center items-start space-y-5"
                 >
-                  <h2 className="text-slate-400 text-5xl text-start">{text.title}</h2>
-                  <p className="text-slate-200 text-2xl text-start break-after-all md:break-after-avoid">
+                  <h2 className="text-slate-400 text-2xl md:text-4xl text-start">{text.title}</h2>
+                  <p className="text-slate-200 text-lg md:text-xl text-start break-after-all md:break-after-avoid">
                     {text.description}
                   </p>
                 </CarouselItem>
@@ -54,7 +54,7 @@ const Header = () => {
       </div>
       <div className="w-1/2 hidden md:flex md:justify-center md:items-center">
         <div className="bg-primary rounded-s-[10%] rounded-e-[50%] overflow-hidden shadow-[0_0_10px] shadow-secondary">
-          <img src={Me} />
+          <img src={Me} className="h-100" />
         </div>
       </div>
     </div>

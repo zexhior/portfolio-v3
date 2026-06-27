@@ -55,21 +55,21 @@ const Projects = () => {
 
   return (
     <div className="h-full">
-      <h2 className="text-6xl text-slate-500 font-semibold text-oswald">Projets</h2>
-      <p className="text-3xl mt-4 mb-10">Voici les projets que j'ai réalisé :</p>
+      <h2 className="text-4xl text-slate-500 font-semibold text-oswald">Projets</h2>
+      <p className="text-2xl mt-4 mb-10">Voici les projets que j'ai réalisé :</p>
       <div className="flex flex-col md:flex-row flex-wrap">
         {projects.map((project, index) => {
           return (
             <div key={`${index}${project.name}`} className="flex flex-col p-2 w-full md:w-1/3">
               <Card className="bg-primary border border-slate-400 text-slate-200 h-full">
                 <CardContent className="flex flex-col gap-4 h-full">
-                  <h3 className="text-oswald text-3xl">{project.name}</h3>
+                  <h3 className="text-oswald text-2xl">{project.name}</h3>
                   <p className="flex flex-auto">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => {
                       return (
                         <div
-                          className="flex items-center gap-2 p-2 bg-secondary rounded-md"
+                          className="flex items-center gap-2 p-2 text-xs bg-secondary rounded-md"
                           key={`${project.name}-${tech.tools}`}
                         >
                           {tech.icon}

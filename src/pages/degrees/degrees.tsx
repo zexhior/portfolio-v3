@@ -21,8 +21,8 @@ const Degrees = () => {
 
   return (
     <div className="py-5">
-      <h2 className="text-6xl text-slate-500 font-semibold text-oswald">Parcours</h2>
-      <p className="text-3xl mt-4 mb-10">
+      <h2 className="text-4xl text-slate-500 font-semibold text-oswald">Parcours</h2>
+      <p className="text-2xl mt-4 mb-10">
         Voici les diplômes academique que j'ai reçu lors de mes études.
       </p>
       <div className="flex flex-col md:flex-row gap-5">

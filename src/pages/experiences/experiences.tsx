@@ -105,8 +105,8 @@ const Experiences = () => {
 
   return (
     <div>
-      <h2 className="text-6xl text-slate-500 font-semibold text-oswald">Expériences</h2>
-      <p className="text-3xl mt-4 mb-10">Voici les postes que j'ai déja occupé dans le passé :</p>
+      <h2 className="text-4xl text-slate-500 font-semibold text-oswald">Expériences</h2>
+      <p className="text-2xl mt-4 mb-10">Voici les postes que j'ai déja occupé dans le passé :</p>
       <div>
         {experiences.map((experience) => {
           return (
@@ -127,7 +127,7 @@ const Experiences = () => {
                     return (
                       <div
                         key={`${experience.duration}-${tech.tools}`}
-                        className="flex items-center gap-2 p-2 bg-primary rounded-md"
+                        className="flex items-center gap-2 p-2 bg-primary rounded-md text-xs"
                       >
                         {tech.icon}
                         {tech.tools}
