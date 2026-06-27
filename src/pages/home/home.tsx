@@ -9,7 +9,7 @@ import Footer from "../footer/footer";
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-10 px-5 md:px-0 mx-auto w-full lg:w-290.5">
+    <div className="flex flex-col gap-10 px-5 md:px-0 mx-auto w-full md:max-w-4/5">
       <Nav />
       <Header />
       <Skills />
