@@ -39,12 +39,9 @@ const SkillContent = ({ skills }: { skills: Skill[] }) => {
     <div className="flex flex-wrap gap-2 ps-2">
       {skills.map((tech) => {
         return (
-          <div
-            key={tech.title}
-            className="flex gap-2 items-center text-md bg-primary p-2 rounded-md"
-          >
+          <div key={tech.title} className="flex gap-2 items-center bg-primary p-2 rounded-md">
             {tech.icon}
-            <p className="text-md font-semibold">{tech.title}</p>
+            <p className="text-xs">{tech.title}</p>
           </div>
         );
       })}
@@ -53,7 +50,8 @@ const SkillContent = ({ skills }: { skills: Skill[] }) => {
 };
 
 const Skills = () => {
-  const size = 25;
+  const size = 15;
+  const titleSize = 25;
   const frontend = {
     web: [
       {
@@ -144,50 +142,49 @@ const Skills = () => {
 
   return (
     <div>
-      <h2 className="text-6xl text-slate-500 font-semibold text-oswald">Compétences</h2>
-      <p className="text-3xl mt-4 mb-10">
+      <h2 className="text-4xl text-slate-500 font-semibold text-oswald">Compétences</h2>
+      <p className="text-2xl mt-4 mb-10">
         Voici les langages, les frameworks et outils que j'utilise pour mon travail
       </p>
       <div className="flex flex-wrap">
         <SkillComponent>
-          <div className="flex gap-2 text-slate-500 items-center text-2xl font-semibold">
+          <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
-              <BsWindowStack size={35} className="text-slate-300" />
+              <BsWindowStack size={titleSize} className="text-slate-300" />
             </div>
             <h2>Frontend</h2>
           </div>
-          <h3 className="flex gap-2 items-center text-xl">
+          <h3 className="flex gap-2 items-center text-lg">
             <MdWebAsset />
             Web
           </h3>
           <SkillContent skills={frontend.web} />
-          <h3 className="flex gap-2 items-center text-xl">
+          <h3 className="flex gap-2 items-center text-lg">
             <FaMobileAlt />
             Mobile
           </h3>
           <SkillContent skills={frontend.mobile} />
         </SkillComponent>
         <SkillComponent>
-          <div className="flex gap-2 text-slate-500 items-center text-2xl font-semibold">
+          <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
-              <BsWindowStack size={35} className="text-slate-300" />
+              <BsWindowStack size={titleSize} className="text-slate-300" />
             </div>
             <h2>Backend</h2>
           </div>
           <SkillContent skills={backend} />
-
-          <div className="flex gap-2 text-slate-500 items-center text-2xl font-semibold">
+          <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
-              <BsDatabase size={35} className="text-slate-300" />
+              <BsDatabase size={titleSize} className="text-slate-300" />
             </div>
             <h2>Base de données</h2>
           </div>
           <SkillContent skills={db} />
         </SkillComponent>
         <SkillComponent>
-          <div className="flex gap-2 text-slate-500 items-center text-2xl font-semibold">
+          <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
-              <FaTools size={35} className="text-slate-300" />
+              <FaTools size={titleSize} className="text-slate-300" />
             </div>
             <h2>Outils</h2>
           </div>
