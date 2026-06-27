@@ -18,6 +18,9 @@ import { DiDjango } from "react-icons/di";
 import { SiAdonisjs, SiMongodb, SiMysql, SiPostgresql } from "react-icons/si";
 import { BsDatabase, BsTypescript, BsWindowStack } from "react-icons/bs";
 import { MdWebAsset } from "react-icons/md";
+import BorderGlow from "@/components/BorderGlow";
+import { motion } from "framer-motion";
+import { animationFadeIn, animationFadeInRight } from "@/lib/style";
 
 interface Skill {
   title: string;
@@ -26,11 +29,24 @@ interface Skill {
 
 const SkillComponent = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="w-full md:w-1/3 flex p-4">
-      <Card className="w-full bg-secondary-800/80 backdrop-blur-xl hover:scale-105 border text-slate-300 transition-all">
-        <CardContent className="flex flex-col gap-4 ">{children}</CardContent>
-      </Card>
-    </div>
+    <motion.div {...animationFadeIn} className="w-full md:w-1/3 flex p-4">
+      <BorderGlow
+        edgeSensitivity={30}
+        glowColor="100 180 180"
+        backgroundColor="transparent"
+        borderRadius={28}
+        glowRadius={100}
+        glowIntensity={1}
+        coneSpread={100}
+        animated={false}
+        colors={["#c084fc", "#f472b6", "#38bdf8"]}
+        className="border-2"
+      >
+        <Card className="h-full bg-secondary text-slate-200">
+          <CardContent className="flex flex-col gap-4 ">{children}</CardContent>
+        </Card>
+      </BorderGlow>
+    </motion.div>
   );
 };
 
@@ -39,7 +55,10 @@ const SkillContent = ({ skills }: { skills: Skill[] }) => {
     <div className="flex flex-wrap gap-2 ps-2">
       {skills.map((tech) => {
         return (
-          <div key={tech.title} className="flex gap-2 items-center bg-primary p-2 rounded-md">
+          <div
+            key={tech.title}
+            className="flex gap-2 items-center bg-primary p-2 rounded-md hover:bg-blue-950 transition ease-in-out duration-200 cursor-pointer"
+          >
             {tech.icon}
             <p className="text-xs">{tech.title}</p>
           </div>
@@ -142,10 +161,15 @@ const Skills = () => {
 
   return (
     <div>
-      <h2 className="text-4xl text-slate-500 font-semibold text-oswald">Compétences</h2>
-      <p className="text-2xl mt-4 mb-10">
+      <motion.h2
+        {...animationFadeInRight}
+        className="text-4xl text-slate-500 font-semibold text-oswald"
+      >
+        Compétences
+      </motion.h2>
+      <motion.p {...animationFadeInRight} className="text-2xl mt-4 mb-10">
         Voici les langages, les frameworks et outils que j'utilise pour mon travail
-      </p>
+      </motion.p>
       <div className="flex flex-wrap">
         <SkillComponent>
           <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
