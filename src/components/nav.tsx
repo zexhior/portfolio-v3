@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -51,10 +51,26 @@ const Nav = () => {
   const [lang, setLang] = useState<"EN" | "FR">("FR");
   const langs = ["FR", "EN"];
   const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [scroll, setScroll] = useState(0);
+
+  const handlerScroll = () => {
+    setScroll(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handlerScroll);
+    return () => {
+      window.removeEventListener("scroll", handlerScroll);
+    };
+  }, []);
 
   return (
     <div className="fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto flex w-full px-5 max-w-290.5 items-center justify-between py-2 lg:px-0">
+      <div
+        className={`${
+          scroll > 0 ? "bg-slate-600/50 rounded-full translate-y-1" : "translate-y-0"
+        } mx-auto flex w-full px-5 max-w-290.5 items-center justify-between py-2 lg:px-2 transition-all ease-in duration-75`}
+      >
         <div className="flex items-center gap-4">
           <p>Logo</p>
           <Select
