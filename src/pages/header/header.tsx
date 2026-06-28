@@ -1,58 +1,108 @@
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import Me from "@/assets/me.png";
 import { motion } from "framer-motion";
 import { animationFadeIn } from "@/lib/style";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+import BlurText from "@/components/BlurText";
 
 const Header = () => {
-  const headerText = [
+  const size = 50;
+
+  const socialNetworks = [
     {
-      title: "Bonjour, je suis Herizo.",
-      description:
-        "Développeur Web Fullstack passionné, je crée des applications modernes, performantes et centrées sur l'expérience utilisateur.",
+      link: "#facebook",
+      icon: <FaFacebook size={size} />,
     },
     {
-      title: "Développement Fullstack",
-      description: "Je crée des applications web complètes avec React, Django et Node.js.",
+      link: "#linkedin",
+      icon: <FaLinkedin size={size} />,
     },
     {
-      title: "Interfaces Modernes et Responsives",
-      description:
-        "Je conçois des applications avec des interfaces rapides, responsives et intuitives adaptées à tous les écrans.",
-    },
-    {
-      title: "APIs et Architecture Backend",
-      description:
-        "Je conçois des APIs REST sécurisées et optimisées, capables de supporter des applications à fort trafic.",
+      link: "#github",
+      icon: <FaGithub size={size} />,
     },
   ];
 
+  const handleAnimationComplete = () => {
+    console.log("Animation completed!");
+  };
+
+  const handleDownload = () => {
+    // 1. Specify the URL and the desired filename
+    const fileUrl = "/CV_Herizo_Dev_Fullstack.pdf";
+    const fileName = "CV_Herizo_Dev_Fullstack.pdf";
+
+    // 2. Create a temporary anchor element
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.setAttribute("download", fileName); // Forces download instead of opening
+
+    // 3. Append to body, trigger click, and clean up
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleGoToContact = () => {
+    // 1. Specify the URL and the desired filename
+    const idContact = "#contact";
+
+    // 2. Create a temporary anchor element
+    const link = document.createElement("a");
+    link.href = idContact;
+
+    // 3. Append to body, trigger click, and clean up
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center w-full relative h-screen">
+    <div className="flex flex-col md:flex-row items-center justify-center w-full relative h-auto my-20 md:m-0 md:h-screen">
       <motion.div {...animationFadeIn} className="w-full md:w-1/2">
-        <Carousel
-          plugins={[
-            Autoplay({
-              delay: 8000,
-            }),
-          ]}
-        >
-          <CarouselContent>
-            {headerText.map((text) => {
-              return (
-                <CarouselItem
-                  key={text.title}
-                  className="flex flex-col justify-center items-start space-y-5"
-                >
-                  <h2 className="text-slate-400 text-2xl md:text-4xl text-start">{text.title}</h2>
-                  <p className="text-slate-200 text-lg md:text-xl text-start break-after-all md:break-after-avoid">
-                    {text.description}
-                  </p>
-                </CarouselItem>
-              );
-            })}
-          </CarouselContent>
-        </Carousel>
+        <BlurText
+          text="Bienvenue! Je suis Herizo"
+          delay={200}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={handleAnimationComplete}
+          className="text-5xl mb-8 text-slate-300"
+        />
+        <BlurText
+          text="Je suis développeur web fullstack et je transforme vos idées en solutions web performantes."
+          delay={200}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={handleAnimationComplete}
+          className="text-2xl mb-8 text-slate-300"
+        />
+        <div className="flex gap-5 w-full mt-2">
+          {socialNetworks.map((socialNetwork) => {
+            return (
+              <a
+                key={socialNetwork.link}
+                href={socialNetwork.link}
+                className=" text-slate-100 hover:text-slate-500"
+              >
+                {socialNetwork.icon}
+              </a>
+            );
+          })}
+        </div>
+        <div className="flex gap-2 mt-4">
+          <Button
+            className="rounded-md bg-transparent border-2 border-slate-100"
+            onClick={handleDownload}
+          >
+            Obtenir mon CV
+          </Button>
+          <Button
+            className="rounded-md bg-transparent border-2 border-slate-100"
+            onClick={handleGoToContact}
+          >
+            Contacter moi
+          </Button>
+        </div>
       </motion.div>
       <motion.div
         {...animationFadeIn}
