@@ -18,9 +18,10 @@ import { DiDjango } from "react-icons/di";
 import { SiAdonisjs, SiMongodb, SiMysql, SiPostgresql } from "react-icons/si";
 import { BsDatabase, BsTypescript, BsWindowStack } from "react-icons/bs";
 import { MdWebAsset } from "react-icons/md";
-import BorderGlow from "@/components/BorderGlow";
 import { motion } from "framer-motion";
-import { animationFadeIn, animationFadeInRight } from "@/lib/style";
+import { animationFadeIn } from "@/lib/style";
+import Title from "@/components/title";
+import SpotlightCard from "@/components/SpotlightCard";
 
 interface Skill {
   title: string;
@@ -29,23 +30,21 @@ interface Skill {
 
 const SkillComponent = ({ children }: { children: React.ReactNode }) => {
   return (
-    <motion.div {...animationFadeIn} className="w-full md:w-1/3 flex p-4">
-      <BorderGlow
-        edgeSensitivity={30}
-        glowColor="100 180 180"
-        backgroundColor="transparent"
-        borderRadius={28}
-        glowRadius={100}
-        glowIntensity={1}
-        coneSpread={100}
-        animated={false}
-        colors={["#c084fc", "#f472b6", "#38bdf8"]}
-        className="border-2"
-      >
-        <Card className="h-full bg-secondary text-slate-200">
-          <CardContent className="flex flex-col gap-4 ">{children}</CardContent>
-        </Card>
-      </BorderGlow>
+    <motion.div
+      {...animationFadeIn}
+      whileHover={{ scale: 1.05 }}
+      className="w-full md:w-1/3 flex p-2"
+    >
+      <Card className="h-full text-slate-200 w-full p-0 bg-blue-950/10 backdrop-blur-4xl overflow-visible">
+        <CardContent className="h-full w-full p-0">
+          <SpotlightCard
+            className="flex flex-col gap-4 h-full w-full p-0 m-0 bg-transparent border border-slate-500"
+            spotlightColor="rgba(0, 229, 255, 0.2)"
+          >
+            {children}
+          </SpotlightCard>
+        </CardContent>
+      </Card>
     </motion.div>
   );
 };
@@ -161,15 +160,11 @@ const Skills = () => {
 
   return (
     <div>
-      <motion.h2
-        {...animationFadeInRight}
-        className="text-4xl text-slate-500 font-semibold text-oswald"
-      >
-        Compétences
-      </motion.h2>
-      <motion.p {...animationFadeInRight} className="text-2xl mt-4 mb-10">
-        Voici les langages, les frameworks et outils que j'utilise pour mon travail
-      </motion.p>
+      <Title
+        title="
+        Compétences"
+        subtitle="Voici les langages, les frameworks et outils que j'utilise pour mon travail"
+      />
       <div className="flex flex-wrap">
         <SkillComponent>
           <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">

@@ -15,6 +15,10 @@ import { SiAdonisjs, SiMysql, SiPostgresql, SiStrapi } from "react-icons/si";
 import { IoLogoIonic } from "react-icons/io";
 import { BsTypescript } from "react-icons/bs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Title from "@/components/title";
+import { motion } from "framer-motion";
+import { animationFadeInRight } from "@/lib/style";
+import MetaBalls from "@/components/MetaBalls";
 
 const Experiences = () => {
   const experiences = [
@@ -105,40 +109,59 @@ const Experiences = () => {
 
   return (
     <div>
-      <h2 className="text-4xl text-slate-500 font-semibold text-oswald">Expériences</h2>
-      <p className="text-2xl mt-4 mb-10">Voici les postes que j'ai déja occupé dans le passé :</p>
-      <div>
-        {experiences.map((experience) => {
-          return (
-            <Card key={experience.duration} className="bg-transparent text-slate-200 border-0">
-              <CardHeader>
-                <CardTitle>
-                  <span className="text-xl text-oswald">{experience.poste}</span>{" "}
-                  <span>{`(${experience.firm})`}</span>
-                </CardTitle>
-                <CardDescription>
-                  <span>{experience.duration}</span>
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="text-slate-100">
-                <p>{experience.description}</p>
-                <div className="flex flex-wrap gap-5 my-4">
-                  {experience.tech.map((tech) => {
-                    return (
-                      <div
-                        key={`${experience.duration}-${tech.tools}`}
-                        className="flex items-center gap-2 p-2 bg-primary rounded-md text-xs"
-                      >
-                        {tech.icon}
-                        {tech.tools}
-                      </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
-          );
-        })}
+      <Title title="Expériences" subtitle="Voici les postes que j'ai déja occupé dans le passé :" />
+      <div className="flex">
+        <div className="w-full md:w-1/2 min-h-fit relative">
+          <div className="sticky top-20 w-full h-72 overflow-visible">
+            <MetaBalls
+              color="#ffffff"
+              cursorBallColor="#000f33"
+              cursorBallSize={2}
+              ballCount={15}
+              animationSize={20}
+              enableMouseInteraction
+              enableTransparency={true}
+              hoverSmoothness={0.15}
+              clumpFactor={1}
+              speed={0.3}
+            />
+          </div>
+        </div>
+        <div className="w-full md:w-1/2">
+          {experiences.map((experience) => {
+            return (
+              <motion.div {...animationFadeInRight} className="w-full">
+                <Card key={experience.duration} className="bg-transparent text-slate-200 border-0">
+                  <CardHeader>
+                    <CardTitle>
+                      <span className="text-xl text-oswald">{experience.poste}</span>{" "}
+                      <span>{`(${experience.firm})`}</span>
+                    </CardTitle>
+                    <CardDescription>
+                      <span>{experience.duration}</span>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="text-slate-100">
+                    <p>{experience.description}</p>
+                    <div className="flex flex-wrap gap-5 my-4">
+                      {experience.tech.map((tech) => {
+                        return (
+                          <div
+                            key={`${experience.duration}-${tech.tools}`}
+                            className="flex items-center gap-2 p-2 bg-primary rounded-md text-xs"
+                          >
+                            {tech.icon}
+                            {tech.tools}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
