@@ -64,7 +64,7 @@ export interface Contacts {
   subtitle: string;
   social: { link: string; icon: string }[];
   contact: { info: string; icon: string }[];
-  form: { title: string; fields: { label: string }[] };
+  form: { title: string; fields: { label: string; placeHolder: string }[]; send: string };
 }
 
 export interface Data {
@@ -75,7 +75,7 @@ export interface Data {
     degrees: Degrees;
     projects: Projects;
     experiences: Experiences;
-    contact: Contacts;
+    contacts: Contacts;
     footer: string;
   };
   en: {
@@ -85,7 +85,7 @@ export interface Data {
     degrees: Degrees;
     projects: Projects;
     experiences: Experiences;
-    contact: Contacts;
+    contacts: Contacts;
     footer: string;
   };
 }
