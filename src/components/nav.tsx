@@ -18,6 +18,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { PiStudentBold } from "react-icons/pi";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Link } from "react-router-dom";
+import Logo from "@/assets/h-logo-light.png";
 
 const Nav = () => {
   const navLink = [
@@ -74,7 +75,7 @@ const Nav = () => {
         } mx-auto flex w-full px-5 md:max-w-4/5 items-center justify-between py-2 md:px-2 transition-all ease-in duration-75 rounded-full`}
       >
         <div className="flex items-center gap-4">
-          <p>Logo</p>
+          <img src={Logo} alt="logo" width={50} height={50} />
           <Select
             defaultValue={lang}
             onValueChange={(value: "EN" | "FR") => {
