@@ -13,6 +13,7 @@ import {
   FaHome,
   FaJs,
   FaLinkedin,
+  FaMailBulk,
   FaNode,
   FaPen,
   FaPhone,
@@ -20,7 +21,7 @@ import {
   FaReact,
   FaTrello,
 } from "react-icons/fa";
-import { FaCss3, FaFlutter, FaHtml5 } from "react-icons/fa6";
+import { FaCss3, FaFlutter, FaHtml5, FaLocationPin } from "react-icons/fa6";
 import { IoLogoIonic, IoLogoJavascript } from "react-icons/io";
 import { PiStudentBold } from "react-icons/pi";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
@@ -59,4 +60,10 @@ export const icons: Record<string, (size?: number) => ReactNode> = {
   fafigma: (size = 20) => <FaFigma size={size} />,
   ioionic: (size = 20) => <IoLogoIonic size={size} />,
   sistrapi: (size = 20) => <SiStrapi size={size} />,
+  famailbuld: (size = 20) => (
+    <FaMailBulk className="hover:bg-slate-600 transition-all ease-in duration-500" size={size} />
+  ),
+  falocationpin: (size = 20) => (
+    <FaLocationPin className="hover:bg-slate-600 transition-all ease-in duration-500" size={size} />
+  ),
 };

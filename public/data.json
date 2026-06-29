@@ -343,13 +343,16 @@
         "title": "Envoyez-moi un message",
         "fields": [
           {
-            "label": "Nom : "
+            "label": "Nom : ",
+            "placeHolder": "Saisir votre nom"
           },
           {
-            "label": "Email : "
+            "label": "Email : ",
+            "placeHolder": "Saisir votre email"
           },
           {
-            "label": "Message : "
+            "label": "Message : ",
+            "placeHolder": "Saisir votre nom"
           }
         ],
         "send": "Envoyer"
