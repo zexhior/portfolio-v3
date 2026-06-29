@@ -93,7 +93,7 @@ interface PropsProjects {
   projects?: Projects;
 }
 
-const Projects: React.FC<PropsProjects> = ({ projects }) => {
+const ProjectsComponent: React.FC<PropsProjects> = ({ projects }) => {
   console.log(projects);
   return (
     <div id="projects" className="h-full">
@@ -145,4 +145,4 @@ const Projects: React.FC<PropsProjects> = ({ projects }) => {
   );
 };
 
-export default Projects;
+export default ProjectsComponent;
