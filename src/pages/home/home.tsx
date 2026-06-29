@@ -7,10 +7,12 @@ import Projects from "../projects/projects";
 import Contacts from "../contacts/contacts";
 import Footer from "../footer/footer";
 import Aurora from "@/components/animation/aurora";
+import { Toaster } from "sonner";
 
 const Home = () => {
   return (
     <div>
+      <Toaster />
       <Aurora
         colorStops={["#7cff67", "#B497CF", "#5227FF"]}
         blend={0.5}

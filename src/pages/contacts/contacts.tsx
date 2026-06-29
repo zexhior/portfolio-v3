@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { FaLocationPin } from "react-icons/fa6";
+import { motion } from "framer-motion";
+import { animationFadeIn } from "@/lib/style";
 
 const messageSchema = z.object({
   name: z.string().nonempty("Veuillez fournir votre nom"),
@@ -33,20 +35,20 @@ const Contacts = () => {
       { position: "top-right" },
     );
   };
-  const size = 80;
+  const size = 65;
 
   const socialNetworks = [
     {
       link: "#facebook",
-      icon: <FaFacebook size={size} />,
+      icon: <FaFacebook size={size} className="hover:text-slate-500 text-slate-200" />,
     },
     {
       link: "#linkedin",
-      icon: <FaLinkedin size={size} />,
+      icon: <FaLinkedin size={size} className="hover:text-slate-500 text-slate-200" />,
     },
     {
       link: "#github",
-      icon: <FaGithub size={size} />,
+      icon: <FaGithub size={size} className="hover:text-slate-500 text-slate-200" />,
     },
   ];
 
@@ -66,7 +68,7 @@ const Contacts = () => {
   ];
 
   return (
-    <div className="flex w-full">
+    <motion.div {...animationFadeIn} className="flex w-full">
       <Card className="w-full bg-primary text-slate-100 border border-slate-400 shadow-[0_0_10px] shadow-slate-500">
         <CardContent className="flex flex-col md:flex-row gap-5 md:gap-0">
           <div className="flex flex-col justify-center items-center w-full md:w-1/2 gap-10">
@@ -96,6 +98,9 @@ const Contacts = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2">
+            <h4 className="text-2xl mb-5 text-oswald text-slate-500 font-semibold">
+              Envoyez-moi un message
+            </h4>
             <form onSubmit={message.handleSubmit(handlerSubmit)}>
               <FieldGroup>
                 <Controller
@@ -167,7 +172,7 @@ const Contacts = () => {
           </div>
         </CardContent>
       </Card>
-    </div>
+    </motion.div>
   );
 };
 
