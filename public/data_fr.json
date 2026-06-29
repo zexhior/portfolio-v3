@@ -1,0 +1,526 @@
+{
+  "nav": {
+    "list": [
+      {
+        "label": "Accueil",
+        "path": "#home",
+        "icon": "fahome"
+      },
+      {
+        "label": "Compétences",
+        "path": "#skills",
+        "icon": "fapen"
+      },
+      {
+        "label": "Parcours",
+        "path": "#degrees",
+        "icon": "pistudentbold"
+      },
+      {
+        "label": "Projets",
+        "path": "#projects",
+        "icon": "pistudentbold"
+      },
+      {
+        "label": "Expériences",
+        "path": "#experiences",
+        "icon": "FaBriefcase"
+      },
+      {
+        "label": "Contact",
+        "path": "#contacts",
+        "icon": "faphone"
+      }
+    ],
+    "social": [
+      {
+        "link": "#facebook",
+        "icon": "fafacebook"
+      },
+      {
+        "link": "#linkedin",
+        "icon": "falinkedin"
+      },
+      {
+        "link": "#github",
+        "icon": "fagithub"
+      }
+    ]
+  },
+  "header": {
+    "intro": "Bonjour, je suis Herizo",
+    "service": "Développeur Full Stack spécialisé dans la conception d'applications web modernes, performantes et évolutives.",
+    "getCV": "Obtenir mon CV",
+    "goToContact": "Contacter moi",
+    "social": [
+      {
+        "link": "#facebook",
+        "icon": "fafacebook"
+      },
+      {
+        "link": "#linkedin",
+        "icon": "falinkedin"
+      },
+      {
+        "link": "#github",
+        "icon": "fagithub"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Compétences",
+    "subtitle": "Les technologies que j'utilise au quotidien pour concevoir des applications web modernes, robustes et évolutives.",
+    "frontend": {
+      "title": "Frontend",
+      "web": [
+        {
+          "title": "Javascript",
+          "icon": "iologojavascript"
+        },
+        {
+          "title": "Typescript",
+          "icon": "bstypescript"
+        },
+        {
+          "title": "HTML5",
+          "icon": "fahtml5"
+        },
+        {
+          "title": "CSS3",
+          "icon": "facss3"
+        },
+        {
+          "title": "Tailwind",
+          "icon": "ritailwindcssfill"
+        },
+        {
+          "title": "React",
+          "icon": "fareact"
+        },
+        {
+          "title": "Next",
+          "icon": "rinextjsfill"
+        }
+      ],
+      "mobile": [
+        {
+          "title": "Flutter",
+          "icon": "faflutter"
+        }
+      ]
+    },
+    "backend": {
+      "title": "Base de données",
+      "tech": [
+        {
+          "title": "Python",
+          "icon": "fapython"
+        },
+        {
+          "title": "Django",
+          "icon": "didjango"
+        },
+        {
+          "title": "Adonis",
+          "icon": "siadonisjs"
+        },
+        {
+          "title": "Node",
+          "icon": "fanode"
+        }
+      ]
+    },
+    "db": {
+      "title": "Base de données",
+      "tech": [
+        {
+          "title": "Postgresql",
+          "icon": "sipostgresql"
+        },
+        {
+          "title": "MySQL",
+          "icon": "simysql"
+        },
+        {
+          "title": "MongoDB",
+          "icon": "simongodb"
+        }
+      ]
+    },
+    "tools": {
+      "title": "Outils",
+      "tech": [
+        {
+          "title": "Git",
+          "icon": "fagitalt"
+        },
+        {
+          "title": "Docker",
+          "icon": "FaDocker"
+        },
+        {
+          "title": "Trello",
+          "icon": "fatrello"
+        }
+      ]
+    }
+  },
+  "degrees": {
+    "title": "Parcours",
+    "subtitle": "Mon parcours académique, qui m'a permis d'acquérir de solides compétences en développement logiciel, en génie logiciel et en intelligence artificielle.",
+    "degree": [
+      {
+        "title": "Master en Informatique de Gestion, Génie Logiciel et Intelligence Artificielle",
+        "description": "Cette formation de Master à l'Institut Supérieur Polytechnique de Madagascar m'a permis d'approfondir mes compétences en développement logiciel, en architecture applicative, en intelligence artificielle et en gestion de projets informatiques. Elle m'a également préparé aux exigences du monde professionnel grâce à une approche axée sur les bonnes pratiques du génie logiciel, la qualité du code et la réalisation de projets complexes."
+      },
+      {
+        "title": "Licence en Informatique de Gestion, Génie Logiciel et Intelligence Artificielle",
+        "description": "Cette Licence m'a permis d'acquérir de solides bases en programmation, en conception logicielle, en gestion des bases de données et en développement d'applications. Les nombreux projets réalisés durant ce cursus ont renforcé ma capacité à concevoir des solutions fiables et adaptées aux besoins des utilisateurs."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projets",
+    "subtitle": "Une sélection de projets sur lesquels j'ai eu l'opportunité de travailler.",
+    "project": [
+      {
+        "name": "Système de gestion des rapports de projets de forage",
+        "tech": [
+          {
+            "tools": "Typescript",
+            "icon": "bstypescript"
+          },
+          {
+            "tools": "React",
+            "icon": "fareact"
+          },
+          {
+            "tools": "TailwindCSS",
+            "icon": "ritailwindcssfill"
+          },
+          {
+            "tools": "Django",
+            "icon": "didjango"
+          },
+          {
+            "tools": "Postgresql",
+            "icon": "sipostgresql"
+          },
+          {
+            "tools": "Docker",
+            "icon": "fadocker"
+          },
+          {
+            "tools": "Trello",
+            "icon": "fatrello"
+          },
+          {
+            "tools": "Git",
+            "icon": "fagitalt"
+          }
+        ],
+        "description": "Développement d'une application web cartographique permettant de suivre les chantiers de forage à Madagascar. La plateforme centralise la rédaction des rapports de terrain, le suivi de l'avancement des travaux, la gestion des équipements ainsi que le contrôle des dépenses liées aux projets.",
+        "photo": ["ForageLogin", "ForageMap"]
+      },
+      {
+        "name": "Clone multijoueur du jeu Codenames",
+        "tech": [
+          {
+            "tools": "Typescript",
+            "icon": "BsTypescript"
+          },
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "TailwindCSS",
+            "icon": "RiTailwindCssFill"
+          },
+          {
+            "tools": "Django",
+            "icon": "DiDjango"
+          },
+          {
+            "tools": "Postgresql",
+            "icon": "SiPostgresql"
+          },
+          {
+            "tools": "Docker",
+            "icon": "FaDocker"
+          },
+          {
+            "tools": "Git",
+            "icon": "FaGitAlt"
+          }
+        ],
+        "description": "Développement d'une version en ligne du célèbre jeu Codenames, permettant à plusieurs joueurs de créer des parties privées et de jouer simultanément dans une interface moderne et interactive.",
+        "photo": ["CodeNameLogin", "CodeNameRoom"]
+      },
+      {
+        "name": "Siteweb d'E-commerce de vente de T-Shirt personnalisé",
+        "tech": [
+          {
+            "tools": "Typescript",
+            "icon": "BsTypescript"
+          },
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "TailwindCSS",
+            "icon": "RiTailwindCssFill"
+          },
+          {
+            "tools": "Django",
+            "icon": "DiDjango"
+          },
+          {
+            "tools": "Postgresql",
+            "icon": "SiPostgresql"
+          },
+          {
+            "tools": "Docker",
+            "icon": "FaDocker"
+          },
+          {
+            "tools": "Git",
+            "icon": "FaGitAlt"
+          }
+        ],
+        "description": "Une application web qui permet de faire des commandes de t-shirt personnalisés en fournissant les motifs ou textes à mettre sur le t-shirt dôté d'une fonctionnalité de démonstration pour permettre au client de voir son image sur le t-shirt",
+        "photo": ["Fabric"]
+      }
+    ]
+  },
+  "experiences": {
+    "title": "Expériences",
+    "subtitle": "Les différentes expériences professionnelles qui ont contribué à développer mes compétences techniques et ma capacité à mener des projets.",
+    "experience": [
+      {
+        "duration": "Août 2025 - Février 2026",
+        "poste": "Développeur web fullstack",
+        "firm": "Generis - Lab",
+        "tech": [
+          {
+            "tools": "Typescript",
+            "icon": "BsTypescript"
+          },
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "TailwindCSS",
+            "icon": "RiTailwindCssFill"
+          },
+          {
+            "tools": "AdonisJS",
+            "icon": "SiAdonisjs"
+          },
+          {
+            "tools": "Postgresql",
+            "icon": "SiPostgresql"
+          },
+          {
+            "tools": "Docker",
+            "icon": "FaDocker"
+          },
+          {
+            "tools": "Trello",
+            "icon": "FaTrello"
+          },
+          {
+            "tools": "Git",
+            "icon": "FaGitAlt"
+          }
+        ],
+        "description": "Développement et maintenance d'une plateforme de gestion de devis (quotation) dédiée aux opérations d'import-export. Participation à la conception de nouvelles fonctionnalités, à l'amélioration continue de l'application et à l'optimisation de l'expérience utilisateur."
+      },
+      {
+        "duration": "Février 2025 - Mai 2025",
+        "poste": "Développeur web fullstack",
+        "firm": "Freelance",
+        "tech": [
+          {
+            "tools": "Javascript",
+            "icon": "FaJs"
+          },
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "Django",
+            "icon": "DiDjango"
+          },
+          {
+            "tools": "Python",
+            "icon": "FaPython"
+          },
+          {
+            "tools": "Mysql",
+            "icon": "SiMysql"
+          },
+          {
+            "tools": "Gitlab",
+            "icon": "FaGitlab"
+          }
+        ],
+        "description": "Conception et développement d'une application web de gestion destinée au secteur de l'hôtellerie-restauration, intégrant la gestion des commandes, des stocks, des équipements et des opérations quotidiennes."
+      },
+      {
+        "duration": "Août 2024 - Février 2025",
+        "poste": "Développeur frontend",
+        "firm": "Vatilab",
+        "tech": [
+          {
+            "tools": "Javascript",
+            "icon": "FaJs"
+          },
+          {
+            "tools": "Typescript",
+            "icon": "BsTypescript"
+          },
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "Angular",
+            "icon": "FaAngular"
+          },
+          {
+            "tools": "Flutter",
+            "icon": "FaFlutter"
+          },
+          {
+            "tools": "Strapi",
+            "icon": "SiStrapi"
+          },
+          {
+            "tools": "Figma",
+            "icon": "FaFigma"
+          },
+          {
+            "tools": "Trello",
+            "icon": "FaTrello"
+          },
+          {
+            "tools": "Gitlab",
+            "icon": "FaGitlab"
+          }
+        ],
+        "description": "Intégration de maquettes UI/UX en applications web et mobiles avec React, Angular et Flutter. Développement d'interfaces modernes, responsives et performantes, ainsi qu'intégration des API fournies par les équipes backend."
+      },
+      {
+        "duration": "Février 2024 - Juillet 2024",
+        "poste": "Stagiaire développeur frontend",
+        "firm": "Vatilab",
+        "tech": [
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "Ionic",
+            "icon": "IoLogoIonic"
+          },
+          {
+            "tools": "Figma",
+            "icon": "FaFigma"
+          },
+          {
+            "tools": "Trello",
+            "icon": "FaTrello"
+          },
+          {
+            "tools": "Gitlab",
+            "icon": "FaGitlab"
+          }
+        ],
+        "description": "Participation au développement et à la maintenance de l'application B2B MyBeeDoo. Mise en œuvre de nouvelles fonctionnalités et collaboration avec les équipes backend afin d'assurer une intégration fluide des services."
+      },
+      {
+        "duration": "Avril 2021 - Septembre 2021",
+        "poste": "Stagiaire développeur fullstack",
+        "firm": "Association Haikintana",
+        "tech": [
+          {
+            "tools": "Typescript",
+            "icon": "BsTypescript"
+          },
+          {
+            "tools": "Angular",
+            "icon": "FaAngular"
+          },
+          {
+            "tools": "Django",
+            "icon": "DiDjango"
+          },
+          {
+            "tools": "Mysql",
+            "icon": "SiMysql"
+          },
+          {
+            "tools": "Git",
+            "icon": "FaGitAlt"
+          }
+        ],
+        "description": "Développement d'une application de gestion des membres et des événements de l'association, incluant la génération automatique de badges, la gestion des inscriptions ainsi que le pointage via QR Code."
+      }
+    ]
+  },
+  "contacts": {
+    "title": "Parlons de votre projet",
+    "subtitle": "Vous avez un projet ou une opportunité ? Je serai ravi d'échanger avec vous.",
+    "social": [
+      {
+        "link": "#facebook",
+        "icon": "FaFacebook"
+      },
+      {
+        "link": "#linkedin",
+        "icon": "FaLinkedin"
+      },
+      {
+        "link": "#github",
+        "icon": "FaGithub"
+      }
+    ],
+    "contact": [
+      {
+        "info": "+261382626428",
+        "icon": "FaPhone"
+      },
+      {
+        "info": "herizoras1@gmail.com",
+        "icon": "FaMailBulk"
+      },
+      {
+        "info": "Madagascar, Antananarivo 101",
+        "icon": "FaLocationPin"
+      }
+    ],
+    "form": {
+      "title": "Laissez-moi un message",
+      "fields": [
+        {
+          "label": "Nom : ",
+          "placeHolder": "Saisissez votre nom"
+        },
+        {
+          "label": "Email : ",
+          "placeHolder": "Saisissez votre adresse e-mail"
+        },
+        {
+          "label": "Message : ",
+          "placeHolder": "Décrivez votre projet ou votre demande"
+        }
+      ],
+      "send": "Envoyer"
+    }
+  },
+  "footer": "©2026 Brice Herizo. Tous droits résérvés."
+}

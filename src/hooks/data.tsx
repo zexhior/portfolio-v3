@@ -1,11 +1,11 @@
 import type { Data } from "@/lib/type";
 import { useQuery, type UseQueryResult } from "@tanstack/react-query";
 
-export const useGetData = (): UseQueryResult<Data> => {
+export const useGetData = (lang: "fr" | "en"): UseQueryResult<Data> => {
   return useQuery<Data>({
-    queryKey: [""],
+    queryKey: [lang],
     queryFn: async () => {
-      const response = await fetch("/data.json");
+      const response = await fetch(`/data_${lang}.json`);
       return response.json();
     },
   });

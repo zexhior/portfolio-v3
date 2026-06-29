@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import React, { useEffect, useState, type ReactNode } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -21,12 +21,13 @@ import { motion } from "framer-motion";
 import type { Nav } from "@/lib/type";
 
 interface PropsNav {
+  lang: "fr" | "en";
+  setLang: React.Dispatch<React.SetStateAction<"fr" | "en">>;
   nav?: Nav;
 }
 
-const NavComponent: React.FC<PropsNav> = ({ nav }) => {
-  const [lang, setLang] = useState<"EN" | "FR">("FR");
-  const langs = ["FR", "EN"];
+const NavComponent: React.FC<PropsNav> = ({ nav, lang, setLang }) => {
+  const langs = ["fr", "en"];
 
   const [scroll, setScroll] = useState(0);
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -62,7 +63,7 @@ const NavComponent: React.FC<PropsNav> = ({ nav }) => {
           <img src={Logo} alt="logo" width={50} height={50} />
           <Select
             defaultValue={lang}
-            onValueChange={(value: "EN" | "FR") => {
+            onValueChange={(value: "en" | "fr") => {
               setLang(value);
             }}
           >
@@ -71,7 +72,7 @@ const NavComponent: React.FC<PropsNav> = ({ nav }) => {
             </SelectTrigger>
             <SelectContent className="bg-transparent border border-white" position="popper">
               <SelectGroup>
-                {langs.map((lg) => {
+                {langs?.map((lg) => {
                   return (
                     <SelectItem key={lg} value={lg} className="text-white bg-transparent py-2">
                       <SelectValue className="active:bg-slate-">{lg}</SelectValue>
@@ -85,7 +86,7 @@ const NavComponent: React.FC<PropsNav> = ({ nav }) => {
         <div className="flex gap-2 items-center">
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
-              {nav?.list.map((nav) => {
+              {nav?.list?.map((nav) => {
                 return (
                   <NavigationMenuItem key={`desktop-${nav.label}`}>
                     <NavigationMenuLink
@@ -110,7 +111,7 @@ const NavComponent: React.FC<PropsNav> = ({ nav }) => {
             </SheetTrigger>
             <SheetContent className=" text-white bg-primary/35 backdrop-blur-3xl border-0 transition-all ease-in duration-350 p-5">
               <nav className="flex flex-col gap-2 border-b border-slate-700 pb-5">
-                {nav?.list.map((nav, index) => {
+                {nav?.list?.map((nav, index) => {
                   return (
                     <motion.div
                       initial={{ opacity: 0, x: 100 }}
@@ -141,7 +142,7 @@ const NavComponent: React.FC<PropsNav> = ({ nav }) => {
                 })}
               </nav>
               <div className="flex gap-5 w-full mt-2">
-                {nav?.social.map((socialNetwork) => {
+                {nav?.social?.map((socialNetwork) => {
                   return (
                     <a
                       key={socialNetwork.link}

@@ -68,24 +68,17 @@ export interface Contacts {
 }
 
 export interface Data {
-  fr: {
-    nav: Nav;
-    header: Header;
-    skills: Skills;
-    degrees: Degrees;
-    projects: Projects;
-    experiences: Experiences;
-    contacts: Contacts;
-    footer: string;
-  };
-  en: {
-    nav: Nav;
-    header: Header;
-    skills: Skills;
-    degrees: Degrees;
-    projects: Projects;
-    experiences: Experiences;
-    contacts: Contacts;
-    footer: string;
-  };
+  nav: Nav;
+  header: Header;
+  skills: Skills;
+  degrees: Degrees;
+  projects: Projects;
+  experiences: Experiences;
+  contacts: Contacts;
+  footer: string;
+}
+
+export interface FullData {
+  en: Data;
+  fr: Data;
 }

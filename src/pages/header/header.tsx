@@ -60,7 +60,7 @@ const HeaderComponent: React.FC<PropsHeader> = ({ header }) => {
           className="text-2xl mb-8 text-slate-300"
         />
         <div className="flex gap-5 w-full mt-2">
-          {header?.social.map((socialNetwork) => {
+          {header?.social?.map((socialNetwork) => {
             return (
               <a
                 key={socialNetwork.link}

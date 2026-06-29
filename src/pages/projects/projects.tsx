@@ -97,9 +97,9 @@ const ProjectsComponent: React.FC<PropsProjects> = ({ projects }) => {
   console.log(projects);
   return (
     <div id="projects" className="h-full">
-      <Title title="Projets" subtitle="Voici les projets que j'ai réalisé :" />
+      <Title title={projects?.title ?? ""} subtitle={projects?.subtitle ?? ""} />
       <div className="flex flex-col md:flex-row flex-wrap">
-        {projects?.project.map((project, index) => {
+        {projects?.project?.map((project, index) => {
           return (
             <Modal key={`${index}-${project.name}`} project={project}>
               <motion.div

@@ -15,7 +15,7 @@ import { useGetData } from "@/hooks/data";
 const Home = () => {
   const [lang, setLang] = useState<"fr" | "en">("fr");
   const [isLoadingExtra, setIsLoadingExtra] = useState<boolean>(true);
-  const { data, isLoading } = useGetData();
+  const { data, isLoading } = useGetData(lang);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -42,14 +42,14 @@ const Home = () => {
             speed={1}
           ></Aurora>
           <div className="flex flex-col gap-10 px-5 md:px-0 mx-auto w-full md:max-w-4/5 overflow-x-clip md:overflow-x-visible">
-            <NavComponent nav={data ? data[lang]?.nav : undefined} />
-            <HeaderComponent header={data ? data[lang]?.header : undefined} />
-            <SkillsComponent skills={data ? data[lang]?.skills : undefined} />
-            <DegreesComponent degrees={data ? data[lang]?.degrees : undefined} />
-            <ProjectsComponent projects={data ? data[lang]?.projects : undefined} />
-            <ExperiencesComponent experiences={data ? data[lang].experiences : undefined} />
-            <ContactsComponent contacts={data ? data[lang].contacts : undefined} />
-            <Footer footer={data ? data[lang].footer : undefined} />
+            <NavComponent lang={lang} setLang={setLang} nav={data?.nav} />
+            <HeaderComponent header={data?.header} />
+            <SkillsComponent skills={data?.skills} />
+            <DegreesComponent degrees={data?.degrees} />
+            <ProjectsComponent projects={data?.projects} />
+            <ExperiencesComponent experiences={data?.experiences} />
+            <ContactsComponent contacts={data?.contacts} />
+            <Footer footer={data?.footer} />
           </div>
         </div>
       )}

@@ -48,11 +48,11 @@ const SkillContent = ({ skills }: { skills?: Skill[] }) => {
       {skills?.map((tech) => {
         return (
           <div
-            key={tech.title}
+            key={tech?.title}
             className="flex gap-2 items-center bg-primary p-2 rounded-md hover:bg-blue-950 transition ease-in-out duration-200 cursor-pointer"
           >
             {icons[tech.icon.toLowerCase()](size)}
-            <p className="text-xs">{tech.title}</p>
+            <p className="text-xs">{tech?.title}</p>
           </div>
         );
       })}
@@ -65,53 +65,50 @@ const SkillsComponent: React.FC<PropsSkill> = ({ skills }) => {
 
   return (
     <div>
-      <Title
-        title="Compétences"
-        subtitle="Voici les langages, les frameworks et outils que j'utilise pour mon travail"
-      />
+      <Title title={skills?.title ?? ""} subtitle={skills?.subtitle ?? ""} />
       <div className="flex flex-wrap">
         <SkillComponent>
           <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
               <BsWindowStack size={titleSize} className="text-slate-300" />
             </div>
-            <h2>{skills?.frontend.title}</h2>
+            <h2>{skills?.frontend?.title}</h2>
           </div>
           <h3 className="flex gap-2 items-center text-lg">
             <MdWebAsset />
             Web
           </h3>
-          <SkillContent skills={skills?.frontend.web} />
+          <SkillContent skills={skills?.frontend?.web} />
           <h3 className="flex gap-2 items-center text-lg">
             <FaMobileAlt />
             Mobile
           </h3>
-          <SkillContent skills={skills?.frontend.mobile} />
+          <SkillContent skills={skills?.frontend?.mobile} />
         </SkillComponent>
         <SkillComponent>
           <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
               <BsWindowStack size={titleSize} className="text-slate-300" />
             </div>
-            <h2>{skills?.backend.title}</h2>
+            <h2>{skills?.backend?.title}</h2>
           </div>
-          <SkillContent skills={skills?.backend.tech} />
+          <SkillContent skills={skills?.backend?.tech} />
           <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
               <BsDatabase size={titleSize} className="text-slate-300" />
             </div>
-            <h2>{skills?.db.title}</h2>
+            <h2>{skills?.db?.title}</h2>
           </div>
-          <SkillContent skills={skills?.db.tech} />
+          <SkillContent skills={skills?.db?.tech} />
         </SkillComponent>
         <SkillComponent>
           <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
               <FaTools size={titleSize} className="text-slate-300" />
             </div>
-            <h2>{skills?.tools.title}</h2>
+            <h2>{skills?.tools?.title}</h2>
           </div>
-          <SkillContent skills={skills?.tools.tech} />
+          <SkillContent skills={skills?.tools?.tech} />
         </SkillComponent>
       </div>
     </div>

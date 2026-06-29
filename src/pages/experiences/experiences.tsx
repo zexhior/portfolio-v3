@@ -18,11 +18,11 @@ const ExperiencesComponent: React.FC<PropsExperiences> = ({ experiences }) => {
 
   return (
     <div id="experiences">
-      <Title title="Expériences" subtitle="Voici les postes que j'ai déja occupé dans le passé :" />
+      <Title title={experiences?.title ?? ""} subtitle={experiences?.subtitle ?? ""} />
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 min-h-fit relative">
           <div className="sticky top-30 w-full h-75 overflow-visible grid grid-cols-2 grid-rows-2 mt-0 md:mt-20">
-            {logoFirm.map((firm) => {
+            {logoFirm?.map((firm) => {
               return (
                 <div key={firm} className="w-ful h-full p-2">
                   <img
@@ -36,7 +36,7 @@ const ExperiencesComponent: React.FC<PropsExperiences> = ({ experiences }) => {
           </div>
         </div>
         <div className="w-full md:w-1/2">
-          {experiences?.experience.map((experience) => {
+          {experiences?.experience?.map((experience) => {
             return (
               <motion.div {...animationFadeInRight} className="w-full" key={experience.duration}>
                 <Card className="bg-transparent text-slate-200 border-0">
@@ -52,7 +52,7 @@ const ExperiencesComponent: React.FC<PropsExperiences> = ({ experiences }) => {
                   <CardContent className="text-slate-100">
                     <p>{experience?.description}</p>
                     <div className="flex flex-wrap gap-5 my-4">
-                      {experience?.tech.map((tech) => {
+                      {experience?.tech?.map((tech) => {
                         return (
                           <div
                             key={`${experience.duration}-${tech.tools}`}

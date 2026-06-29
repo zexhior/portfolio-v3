@@ -14,9 +14,9 @@ const DegreesComponent: React.FC<PropsDegrees> = ({ degrees }) => {
     <div id="degrees" className="py-5">
       <Title title={degrees?.title ?? ""} subtitle={degrees?.subtitle ?? ""} />
       <motion.div {...animationFadeIn} className="flex flex-col md:flex-row gap-5 max-h-fit">
-        {degrees?.degree.map((degree) => {
+        {degrees?.degree?.map((degree) => {
           return (
-            <div key={degree.title} className="w-full max-h-fit">
+            <div key={degree?.title} className="w-full max-h-fit">
               <GlareHover
                 glareColor="#ffffff"
                 glareOpacity={0.3}
@@ -25,7 +25,7 @@ const DegreesComponent: React.FC<PropsDegrees> = ({ degrees }) => {
                 transitionDuration={800}
                 playOnce={false}
                 background="#000719"
-                height="auto"
+                height="100%"
                 borderRadius="25px"
                 width="100%"
               >
