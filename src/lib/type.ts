@@ -50,11 +50,11 @@ export interface Projects {
 export interface Experiences {
   title: string;
   subtitle: string;
-  exprience: {
+  experience: {
     duration: string;
     poste: string;
     firm: string;
-    tech: { tool: string; icon: string }[];
+    tech: { tools: string; icon: string }[];
     description: string;
   }[];
 }
