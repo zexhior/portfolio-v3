@@ -127,8 +127,11 @@ const Nav = () => {
               {navLink.map((nav) => {
                 return (
                   <NavigationMenuItem key={`desktop-${nav.label}`}>
-                    <NavigationMenuLink className="hover:bg-slate-500/50 bg-transparent transition-all ease-in duration-200 cursor-pointer">
-                      <a href={nav.path}>{nav.label}</a>
+                    <NavigationMenuLink
+                      className="hover:bg-slate-500/50 bg-transparent transition-all ease-in duration-200 cursor-pointer"
+                      href={nav.path}
+                    >
+                      {nav.label}
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 );
