@@ -11,11 +11,12 @@ import { Button } from "@/components/ui/button";
 import { FaLocationPin } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { animationFadeIn } from "@/lib/style";
+import { useSendMessage } from "@/hooks/message";
 
 const messageSchema = z.object({
   name: z.string().nonempty("Veuillez fournir votre nom"),
   email: z.email("Saisissez un email valide").nonempty("Veuillez fournir votre email!"),
-  message: z.string().nonempty("Veuillez écrire votre message"),
+  messages: z.string().nonempty("Veuillez écrire votre message"),
 });
 
 const Contacts = () => {
@@ -24,12 +25,14 @@ const Contacts = () => {
     defaultValues: {
       name: "",
       email: "",
-      message: "",
+      messages: "",
     },
   });
 
-  const handlerSubmit = (data: z.infer<typeof messageSchema>) => {
-    console.log(data);
+  const { mutateAsync: sendMessage } = useSendMessage();
+
+  const handlerSubmit = async (data: z.infer<typeof messageSchema>) => {
+    await sendMessage(data);
     toast.success(
       "Merci de m'avoir envoyé un message et vous réponderais dans les plus bref délai",
       { position: "top-right" },
@@ -145,7 +148,7 @@ const Contacts = () => {
                   }}
                 />
                 <Controller
-                  name="message"
+                  name="messages"
                   control={message.control}
                   render={({ field, fieldState }) => {
                     return (
