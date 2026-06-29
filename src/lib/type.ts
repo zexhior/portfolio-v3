@@ -15,15 +15,19 @@ export interface Skills {
   title: string;
   subtitle: string;
   frontend: {
+    title: string;
     web: { title: string; icon: string }[];
     mobile: { title: string; icon: string }[];
   };
   backend: {
     title: string;
-    icon: string;
-  }[];
-  db: { title: string; icon: string }[];
-  tools: { title: string; icon: string }[];
+    tech: {
+      title: string;
+      icon: string;
+    }[];
+  };
+  db: { title: string; tech: { title: string; icon: string }[] };
+  tools: { title: "Outils"; tech: { title: string; icon: string }[] };
 }
 
 export interface Degrees {

@@ -72,6 +72,7 @@
       "title": "Compétences",
       "subtitle": "Voici les langages, les frameworks et outils que j'utilise pour mon travail",
       "frontend": {
+        "title": "Frontend",
         "web": [
           {
             "title": "Javascript",
@@ -109,52 +110,61 @@
           }
         ]
       },
-      "backend": [
-        {
-          "title": "Python",
-          "icon": "fapython"
-        },
-        {
-          "title": "Django",
-          "icon": "didjango"
-        },
-        {
-          "title": "Adonis",
-          "icon": "siadonisjs"
-        },
-        {
-          "title": "Node",
-          "icon": "fanode"
-        }
-      ],
-      "db": [
-        {
-          "title": "Postgresql",
-          "icon": "sipostgresql"
-        },
-        {
-          "title": "MySQL",
-          "icon": "simysql"
-        },
-        {
-          "title": "MongoDB",
-          "icon": "simongodb"
-        }
-      ],
-      "tools": [
-        {
-          "title": "Git",
-          "icon": "fagitalt"
-        },
-        {
-          "title": "Docker",
-          "icon": "FaDocker"
-        },
-        {
-          "title": "Trello",
-          "icon": "fatrello"
-        }
-      ]
+      "backend": {
+        "title": "Base de données",
+        "tech": [
+          {
+            "title": "Python",
+            "icon": "fapython"
+          },
+          {
+            "title": "Django",
+            "icon": "didjango"
+          },
+          {
+            "title": "Adonis",
+            "icon": "siadonisjs"
+          },
+          {
+            "title": "Node",
+            "icon": "fanode"
+          }
+        ]
+      },
+      "db": {
+        "title": "Base de données",
+        "tech": [
+          {
+            "title": "Postgresql",
+            "icon": "sipostgresql"
+          },
+          {
+            "title": "MySQL",
+            "icon": "simysql"
+          },
+          {
+            "title": "MongoDB",
+            "icon": "simongodb"
+          }
+        ]
+      },
+      "tools": {
+        "title": "Outils",
+        "tech": [
+          {
+            "title": "Git",
+            "icon": "fagitalt"
+          },
+          {
+            "title": "Docker",
+            "icon": "FaDocker"
+          },
+          {
+            "title": "Trello",
+            "icon": "fatrello"
+          }
+        ]
+      }
     },
     "degrees": {
       "title": "Parcours",
