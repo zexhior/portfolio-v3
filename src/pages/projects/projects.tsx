@@ -94,7 +94,6 @@ interface PropsProjects {
 }
 
 const ProjectsComponent: React.FC<PropsProjects> = ({ projects }) => {
-  console.log(projects);
   return (
     <div id="projects" className="h-full">
       <Title title={projects?.title ?? ""} subtitle={projects?.subtitle ?? ""} />

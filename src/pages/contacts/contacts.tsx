@@ -52,14 +52,18 @@ const ContactsComponent: React.FC<PropsContacts> = ({ contacts }) => {
         <CardContent className="flex flex-col md:flex-row gap-5 md:gap-0">
           <div className="flex flex-col justify-center items-center w-full md:w-1/2 gap-10">
             <div className="text-center">
-              <h3 className="text-5xl text-oswald text-slate-500">{contacts?.title}</h3>
+              <h3 className="text-5xl text-oswald text-slate-100">{contacts?.title}</h3>
               <p className="text-xl break-after-all my-2">{contacts?.subtitle}</p>
             </div>
             <div className="flex flex-col gap-2 ">
               <div className="flex gap-5 w-full text-slate-400">
                 {contacts?.social?.map((socialNetwork) => {
                   return (
-                    <a key={socialNetwork.link} href={socialNetwork.link}>
+                    <a
+                      key={socialNetwork.link}
+                      href={socialNetwork.link}
+                      className="text-slate-200 hover:text-slate-500"
+                    >
                       {icons[socialNetwork.icon.toLocaleLowerCase()](size)}
                     </a>
                   );
