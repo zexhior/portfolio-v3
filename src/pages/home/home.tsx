@@ -27,7 +27,7 @@ const Home = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className={`${isLoading ? "h-screen overflow-hidden" : "overflow-scroll"}`}>
+        <div className={`${isLoading ? "h-screen overflow-hidden" : "overflow-visible"}`}>
           <Toaster />
           <Aurora
             colorStops={["#7cff67", "#B497CF", "#5227FF"]}
