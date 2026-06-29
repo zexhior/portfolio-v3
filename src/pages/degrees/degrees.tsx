@@ -9,7 +9,7 @@ interface PropsDegrees {
   degrees?: Degrees;
 }
 
-const Degrees: React.FC<PropsDegrees> = ({ degrees }) => {
+const DegreesComponent: React.FC<PropsDegrees> = ({ degrees }) => {
   return (
     <div id="degrees" className="py-5">
       <Title title={degrees?.title ?? ""} subtitle={degrees?.subtitle ?? ""} />
@@ -48,4 +48,4 @@ const Degrees: React.FC<PropsDegrees> = ({ degrees }) => {
   );
 };
 
-export default Degrees;
+export default DegreesComponent;

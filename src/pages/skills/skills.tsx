@@ -60,7 +60,7 @@ const SkillContent = ({ skills }: { skills?: Skill[] }) => {
   );
 };
 
-const Skills: React.FC<PropsSkill> = ({ skills }) => {
+const SkillsComponent: React.FC<PropsSkill> = ({ skills }) => {
   const titleSize = 25;
 
   return (
@@ -118,4 +118,4 @@ const Skills: React.FC<PropsSkill> = ({ skills }) => {
   );
 };
 
-export default Skills;
+export default SkillsComponent;

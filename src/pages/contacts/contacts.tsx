@@ -24,7 +24,7 @@ interface PropsContacts {
   contacts?: Contacts;
 }
 
-const Contacts: React.FC<PropsContacts> = ({ contacts }) => {
+const ContactsComponent: React.FC<PropsContacts> = ({ contacts }) => {
   const message = useForm<z.infer<typeof messageSchema>>({
     resolver: zodResolver(messageSchema),
     defaultValues: {
@@ -155,4 +155,4 @@ const Contacts: React.FC<PropsContacts> = ({ contacts }) => {
   );
 };
 
-export default Contacts;
+export default ContactsComponent;

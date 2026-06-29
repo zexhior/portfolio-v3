@@ -24,7 +24,7 @@ interface PropsNav {
   nav?: Nav;
 }
 
-const Nav: React.FC<PropsNav> = ({ nav }) => {
+const NavComponent: React.FC<PropsNav> = ({ nav }) => {
   const [lang, setLang] = useState<"EN" | "FR">("FR");
   const langs = ["FR", "EN"];
 
@@ -161,4 +161,4 @@ const Nav: React.FC<PropsNav> = ({ nav }) => {
   );
 };
 
-export default Nav;
+export default NavComponent;

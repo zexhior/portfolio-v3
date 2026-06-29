@@ -13,7 +13,7 @@ interface PropsExperiences {
   experiences?: Experiences;
 }
 
-const Experiences: React.FC<PropsExperiences> = ({ experiences }) => {
+const ExperiencesComponent: React.FC<PropsExperiences> = ({ experiences }) => {
   const logoFirm = [Generis, Logo, Vatilab, Haikintana];
 
   return (
@@ -77,4 +77,4 @@ const Experiences: React.FC<PropsExperiences> = ({ experiences }) => {
   );
 };
 
-export default Experiences;
+export default ExperiencesComponent;

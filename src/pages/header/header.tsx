@@ -10,7 +10,7 @@ interface PropsHeader {
   header?: Header;
 }
 
-const Header: React.FC<PropsHeader> = ({ header }) => {
+const HeaderComponent: React.FC<PropsHeader> = ({ header }) => {
   const handleDownload = () => {
     // 1. Specify the URL and the desired filename
     const fileUrl = "/CV_Herizo_Dev_Fullstack.pdf";
@@ -99,4 +99,4 @@ const Header: React.FC<PropsHeader> = ({ header }) => {
   );
 };
 
-export default Header;
+export default HeaderComponent;

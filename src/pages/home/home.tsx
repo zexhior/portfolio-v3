@@ -1,11 +1,11 @@
-import Nav from "@/components/nav";
-import Header from "../header/header";
-import Skills from "../skills/skills";
-import Degrees from "../degrees/degrees";
-import Experiences from "../experiences/experiences";
-import Projects from "../projects/projects";
-import Contacts from "../contacts/contacts";
-import Footer from "../footer/footer";
+import NavComponent from "@/components/nav";
+import HeaderComponent from "@/pages/header/header";
+import SkillsComponent from "@/pages/skills/skills";
+import DegreesComponent from "@/pages/degrees/degrees";
+import ExperiencesComponent from "@/pages/experiences/experiences";
+import ProjectsComponent from "@/pages/projects/projects";
+import ContactsComponent from "@/pages/contacts/contacts";
+import Footer from "@/pages/footer/footer";
 import Aurora from "@/components/animation/aurora";
 import { Toaster } from "sonner";
 import Loader from "@/components/animation/loading";
@@ -42,13 +42,13 @@ const Home = () => {
             speed={1}
           ></Aurora>
           <div className="flex flex-col gap-10 px-5 md:px-0 mx-auto w-full md:max-w-4/5 overflow-x-clip md:overflow-x-visible">
-            <Nav nav={data ? data[lang]?.nav : undefined} />
-            <Header header={data ? data[lang]?.header : undefined} />
-            <Skills skills={data ? data[lang]?.skills : undefined} />
-            <Degrees degrees={data ? data[lang]?.degrees : undefined} />
-            <Projects />
-            <Experiences experiences={data ? data[lang].experiences : undefined} />
-            <Contacts contacts={data ? data[lang].contacts : undefined} />
+            <NavComponent nav={data ? data[lang]?.nav : undefined} />
+            <HeaderComponent header={data ? data[lang]?.header : undefined} />
+            <SkillsComponent skills={data ? data[lang]?.skills : undefined} />
+            <DegreesComponent degrees={data ? data[lang]?.degrees : undefined} />
+            <ProjectsComponent />
+            <ExperiencesComponent experiences={data ? data[lang].experiences : undefined} />
+            <ContactsComponent contacts={data ? data[lang].contacts : undefined} />
             <Footer footer={data ? data[lang].footer : undefined} />
           </div>
         </div>
