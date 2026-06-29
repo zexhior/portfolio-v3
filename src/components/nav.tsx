@@ -13,12 +13,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { FaBriefcase, FaHome, FaPen, FaPhone } from "react-icons/fa";
+import {
+  FaBriefcase,
+  FaFacebook,
+  FaGithub,
+  FaHome,
+  FaLinkedin,
+  FaPen,
+  FaPhone,
+} from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PiStudentBold } from "react-icons/pi";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { Link } from "react-router-dom";
 import Logo from "@/assets/h-logo-light.png";
+import { motion } from "framer-motion";
 
 const Nav = () => {
   const navLink = [
@@ -58,10 +66,28 @@ const Nav = () => {
   const langs = ["FR", "EN"];
   // const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [scroll, setScroll] = useState(0);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handlerScroll = () => {
     setScroll(window.scrollY);
   };
+
+  const size = 35;
+
+  const socialNetworks = [
+    {
+      link: "#facebook",
+      icon: <FaFacebook size={size} />,
+    },
+    {
+      link: "#linkedin",
+      icon: <FaLinkedin size={size} />,
+    },
+    {
+      link: "#github",
+      icon: <FaGithub size={size} />,
+    },
+  ];
 
   useEffect(() => {
     window.addEventListener("scroll", handlerScroll);
@@ -138,25 +164,60 @@ const Nav = () => {
               })}
             </NavigationMenuList>
           </NavigationMenu>
-          <Sheet>
-            <SheetTrigger className="border border-white p-2 rounded-md flex md:hidden">
+          <Sheet open={isOpen}>
+            <SheetTrigger
+              className="border border-white p-2 rounded-md flex md:hidden"
+              onClick={() => {
+                setIsOpen(true);
+              }}
+            >
               <RxHamburgerMenu />
             </SheetTrigger>
             <SheetContent className="px-5 pt-15 text-white bg-primary border-0 shadow-[0_0_10px] shadow-slate-200/50">
-              <nav className="flex flex-col gap-4 border-b border-slate-700 pb-5">
-                {navLink.map((nav) => {
+              <nav className="flex flex-col gap-2 border-b border-slate-700 pb-5">
+                {navLink.map((nav, index) => {
                   return (
-                    <Link
+                    <motion.div
+                      initial={{ opacity: 0, x: 100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{
+                        opacity: {
+                          delay: index * 0.02,
+                          duration: 0.2,
+                        },
+                        x: {
+                          delay: index * 0.02,
+                          duration: 0.2,
+                        },
+                      }}
                       key={`mobile-${nav.label}`}
-                      to={nav.path}
-                      className="flex gap-5 items-center py-5"
+                      onClick={() => {
+                        setIsOpen(false);
+                      }}
                     >
-                      {nav.icon}
-                      {nav.label}
-                    </Link>
+                      <a
+                        href={nav.path}
+                        className="flex gap-5 items-center py-5  uppercase text-xl font-bold tracking-widest text-outfit"
+                      >
+                        {nav.label}
+                      </a>
+                    </motion.div>
                   );
                 })}
               </nav>
+              <div className="flex gap-5 w-full mt-2">
+                {socialNetworks.map((socialNetwork) => {
+                  return (
+                    <a
+                      key={socialNetwork.link}
+                      href={socialNetwork.link}
+                      className=" text-slate-100 hover:text-slate-500"
+                    >
+                      {socialNetwork.icon}
+                    </a>
+                  );
+                })}
+              </div>
             </SheetContent>
           </Sheet>
         </div>
