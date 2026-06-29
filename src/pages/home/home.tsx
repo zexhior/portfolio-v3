@@ -46,7 +46,7 @@ const Home = () => {
             <HeaderComponent header={data ? data[lang]?.header : undefined} />
             <SkillsComponent skills={data ? data[lang]?.skills : undefined} />
             <DegreesComponent degrees={data ? data[lang]?.degrees : undefined} />
-            <ProjectsComponent />
+            <ProjectsComponent projects={data ? data[lang]?.projects : undefined} />
             <ExperiencesComponent experiences={data ? data[lang].experiences : undefined} />
             <ContactsComponent contacts={data ? data[lang].contacts : undefined} />
             <Footer footer={data ? data[lang].footer : undefined} />
