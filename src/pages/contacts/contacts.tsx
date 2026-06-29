@@ -68,7 +68,7 @@ const Contacts = () => {
   ];
 
   return (
-    <motion.div {...animationFadeIn} className="flex w-full">
+    <motion.div id="contacts" {...animationFadeIn} className="flex w-full">
       <Card className="w-full bg-primary text-slate-100 border border-slate-400 shadow-[0_0_10px] shadow-slate-500">
         <CardContent className="flex flex-col md:flex-row gap-5 md:gap-0">
           <div className="flex flex-col justify-center items-center w-full md:w-1/2 gap-10">

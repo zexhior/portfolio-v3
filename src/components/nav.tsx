@@ -24,27 +24,32 @@ const Nav = () => {
   const navLink = [
     {
       label: "Accueil",
-      path: "/",
+      path: "#home",
       icon: <FaHome size={20} />,
     },
     {
       label: "Compétences",
-      path: "/skills",
+      path: "#skills",
       icon: <FaPen size={20} />,
     },
     {
       label: "Parcours",
-      path: "/parcours",
+      path: "#degrees",
+      icon: <PiStudentBold size={20} />,
+    },
+    {
+      label: "Projets",
+      path: "#projects",
       icon: <PiStudentBold size={20} />,
     },
     {
       label: "Expériences",
-      path: "/experiences",
+      path: "#experiences",
       icon: <FaBriefcase size={20} />,
     },
     {
       label: "Contact",
-      path: "/contacts",
+      path: "#contacts",
       icon: <FaPhone size={20} />,
     },
   ];
@@ -122,8 +127,8 @@ const Nav = () => {
               {navLink.map((nav) => {
                 return (
                   <NavigationMenuItem key={`desktop-${nav.label}`}>
-                    <NavigationMenuLink className="hover:bg-blue-500/50 transition-all ease-in duration-75 cursor-pointer">
-                      {nav.label}
+                    <NavigationMenuLink className="hover:bg-slate-500/50 bg-transparent transition-all ease-in duration-200 cursor-pointer">
+                      <a href={nav.path}>{nav.label}</a>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 );

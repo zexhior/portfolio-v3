@@ -45,7 +45,7 @@ const Header = () => {
 
   const handleGoToContact = () => {
     // 1. Specify the URL and the desired filename
-    const idContact = "#contact";
+    const idContact = "#contacts";
 
     // 2. Create a temporary anchor element
     const link = document.createElement("a");
@@ -58,7 +58,10 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center w-full relative h-auto my-20 md:m-0 md:h-screen">
+    <div
+      id="home"
+      className="flex flex-col md:flex-row items-center justify-center w-full relative h-auto my-20 md:m-0 md:h-screen"
+    >
       <motion.div {...animationFadeIn} className="w-full md:w-1/2">
         <BlurText
           text="Bienvenue! Je suis Herizo"

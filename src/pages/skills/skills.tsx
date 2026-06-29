@@ -31,6 +31,7 @@ interface Skill {
 const SkillComponent = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.div
+      id="skills"
       {...animationFadeIn}
       whileHover={{ scale: 1.05 }}
       className="w-full md:w-1/3 flex p-2"

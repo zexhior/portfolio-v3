@@ -24,7 +24,7 @@ const Degrees = () => {
   ];
 
   return (
-    <div className="py-5">
+    <div id="degrees" className="py-5">
       <Title
         title="
         Parcours"
