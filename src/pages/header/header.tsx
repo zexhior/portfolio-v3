@@ -1,28 +1,16 @@
 import Me from "@/assets/me.png";
 import { motion } from "framer-motion";
 import { animationFadeIn, animationFadeInRight } from "@/lib/style";
-import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import BlurText from "@/components/BlurText";
+import type { Header } from "@/lib/type";
+import { icons } from "@/lib/icons";
 
-const Header = () => {
-  const size = 50;
+interface PropsHeader {
+  header?: Header;
+}
 
-  const socialNetworks = [
-    {
-      link: "#facebook",
-      icon: <FaFacebook size={size} />,
-    },
-    {
-      link: "#linkedin",
-      icon: <FaLinkedin size={size} />,
-    },
-    {
-      link: "#github",
-      icon: <FaGithub size={size} />,
-    },
-  ];
-
+const HeaderComponent: React.FC<PropsHeader> = ({ header }) => {
   const handleDownload = () => {
     // 1. Specify the URL and the desired filename
     const fileUrl = "/CV_Herizo_Dev_Fullstack.pdf";
@@ -53,6 +41,8 @@ const Header = () => {
     document.body.removeChild(link);
   };
 
+  const size = 50;
+
   return (
     <div
       id="home"
@@ -60,24 +50,24 @@ const Header = () => {
     >
       <motion.div {...animationFadeIn} className="w-full md:w-1/2">
         <motion.h3 {...animationFadeInRight} className="text-5xl text-slate-400 text-oswald mb-3">
-          Bienvenue! Je suis Herizo
+          {header?.intro}
         </motion.h3>
         <BlurText
-          text="Je suis développeur web fullstack et je transforme vos idées en solutions web performantes."
+          text={header?.service}
           delay={200}
           animateBy="words"
           direction="top"
           className="text-2xl mb-8 text-slate-300"
         />
         <div className="flex gap-5 w-full mt-2">
-          {socialNetworks.map((socialNetwork) => {
+          {header?.social?.map((socialNetwork) => {
             return (
               <a
                 key={socialNetwork.link}
                 href={socialNetwork.link}
                 className=" text-slate-100 hover:text-slate-500"
               >
-                {socialNetwork.icon}
+                {icons[socialNetwork.icon.toLocaleLowerCase()](size)}
               </a>
             );
           })}
@@ -87,13 +77,13 @@ const Header = () => {
             className="rounded-md bg-transparent border-2 border-slate-100"
             onClick={handleDownload}
           >
-            Obtenir mon CV
+            {header?.getCV}
           </Button>
           <Button
             className="rounded-md bg-transparent border-2 border-slate-100"
             onClick={handleGoToContact}
           >
-            Contacter moi
+            {header?.goToContact}
           </Button>
         </div>
       </motion.div>
@@ -109,4 +99,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderComponent;

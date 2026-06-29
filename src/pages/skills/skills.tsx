@@ -1,32 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { IoLogoJavascript } from "react-icons/io";
-import {
-  FaReact,
-  FaNode,
-  FaGitAlt,
-  FaDocker,
-  FaTrello,
-  FaTools,
-  FaMobileAlt,
-  FaHtml5,
-  FaCss3,
-  FaPython,
-} from "react-icons/fa";
-import { FaFlutter } from "react-icons/fa6";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { DiDjango } from "react-icons/di";
-import { SiAdonisjs, SiMongodb, SiMysql, SiPostgresql } from "react-icons/si";
-import { BsDatabase, BsTypescript, BsWindowStack } from "react-icons/bs";
+import { FaTools, FaMobileAlt } from "react-icons/fa";
+import { BsDatabase, BsWindowStack } from "react-icons/bs";
 import { MdWebAsset } from "react-icons/md";
 import { motion } from "framer-motion";
 import { animationFadeIn } from "@/lib/style";
 import Title from "@/components/title";
 import SpotlightCard from "@/components/SpotlightCard";
-
-interface Skill {
-  title: string;
-  icon: React.ReactNode;
-}
+import type { Skills } from "@/lib/type";
+import { icons } from "@/lib/icons";
 
 const SkillComponent = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -50,17 +31,28 @@ const SkillComponent = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const SkillContent = ({ skills }: { skills: Skill[] }) => {
+interface PropsSkill {
+  skills?: Skills;
+}
+
+interface Skill {
+  title: string;
+  icon: string;
+}
+
+const size = 15;
+
+const SkillContent = ({ skills }: { skills?: Skill[] }) => {
   return (
     <div className="flex flex-wrap gap-2 ps-2">
-      {skills.map((tech) => {
+      {skills?.map((tech) => {
         return (
           <div
-            key={tech.title}
+            key={tech?.title}
             className="flex gap-2 items-center bg-primary p-2 rounded-md hover:bg-blue-950 transition ease-in-out duration-200 cursor-pointer"
           >
-            {tech.icon}
-            <p className="text-xs">{tech.title}</p>
+            {icons[tech.icon.toLowerCase()](size)}
+            <p className="text-xs">{tech?.title}</p>
           </div>
         );
       })}
@@ -68,151 +60,59 @@ const SkillContent = ({ skills }: { skills: Skill[] }) => {
   );
 };
 
-const Skills = () => {
-  const size = 15;
+const SkillsComponent: React.FC<PropsSkill> = ({ skills }) => {
   const titleSize = 25;
-  const frontend = {
-    web: [
-      {
-        title: "Javascript",
-        icon: <IoLogoJavascript size={size} />,
-      },
-      {
-        title: "Typescript",
-        icon: <BsTypescript size={size} />,
-      },
-      {
-        title: "HTML5",
-        icon: <FaHtml5 size={size} />,
-      },
-      {
-        title: "CSS3",
-        icon: <FaCss3 size={size} />,
-      },
-      {
-        title: "Tailwind",
-        icon: <RiTailwindCssFill size={size} />,
-      },
-      {
-        title: "React",
-        icon: <FaReact size={size} />,
-      },
-      {
-        title: "Next",
-        icon: <RiNextjsFill size={size} />,
-      },
-    ],
-    mobile: [
-      {
-        title: "Flutter",
-        icon: <FaFlutter size={size} />,
-      },
-    ],
-  };
-
-  const backend = [
-    {
-      title: "Python",
-      icon: <FaPython size={size} />,
-    },
-    {
-      title: "Django",
-      icon: <DiDjango size={size} />,
-    },
-    {
-      title: "Adonis",
-      icon: <SiAdonisjs size={size} />,
-    },
-    {
-      title: "Node",
-      icon: <FaNode size={size} />,
-    },
-  ];
-
-  const db = [
-    {
-      title: "Postgresql",
-      icon: <SiPostgresql size={size} />,
-    },
-    {
-      title: "MySQL",
-      icon: <SiMysql size={size} />,
-    },
-    {
-      title: "MongoDB",
-      icon: <SiMongodb size={size} />,
-    },
-  ];
-
-  const tools = [
-    {
-      title: "Git",
-      icon: <FaGitAlt size={size} />,
-    },
-    {
-      title: "Docker",
-      icon: <FaDocker size={size} />,
-    },
-    {
-      title: "Trello",
-      icon: <FaTrello size={size} />,
-    },
-  ];
 
   return (
     <div>
-      <Title
-        title="
-        Compétences"
-        subtitle="Voici les langages, les frameworks et outils que j'utilise pour mon travail"
-      />
+      <Title title={skills?.title ?? ""} subtitle={skills?.subtitle ?? ""} />
       <div className="flex flex-wrap">
         <SkillComponent>
           <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
               <BsWindowStack size={titleSize} className="text-slate-300" />
             </div>
-            <h2>Frontend</h2>
+            <h2>{skills?.frontend?.title}</h2>
           </div>
           <h3 className="flex gap-2 items-center text-lg">
             <MdWebAsset />
             Web
           </h3>
-          <SkillContent skills={frontend.web} />
+          <SkillContent skills={skills?.frontend?.web} />
           <h3 className="flex gap-2 items-center text-lg">
             <FaMobileAlt />
             Mobile
           </h3>
-          <SkillContent skills={frontend.mobile} />
+          <SkillContent skills={skills?.frontend?.mobile} />
         </SkillComponent>
         <SkillComponent>
           <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
               <BsWindowStack size={titleSize} className="text-slate-300" />
             </div>
-            <h2>Backend</h2>
+            <h2>{skills?.backend?.title}</h2>
           </div>
-          <SkillContent skills={backend} />
+          <SkillContent skills={skills?.backend?.tech} />
           <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
               <BsDatabase size={titleSize} className="text-slate-300" />
             </div>
-            <h2>Base de données</h2>
+            <h2>{skills?.db?.title}</h2>
           </div>
-          <SkillContent skills={db} />
+          <SkillContent skills={skills?.db?.tech} />
         </SkillComponent>
         <SkillComponent>
           <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">
             <div className="bg-violet-950 p-2 rounded-md">
               <FaTools size={titleSize} className="text-slate-300" />
             </div>
-            <h2>Outils</h2>
+            <h2>{skills?.tools?.title}</h2>
           </div>
-          <SkillContent skills={tools} />
+          <SkillContent skills={skills?.tools?.tech} />
         </SkillComponent>
       </div>
     </div>
   );
 };
 
-export default Skills;
+export default SkillsComponent;

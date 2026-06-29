@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, type ReactNode } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -13,58 +13,22 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import {
-  FaBriefcase,
-  FaFacebook,
-  FaGithub,
-  FaHome,
-  FaLinkedin,
-  FaPen,
-  FaPhone,
-} from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { PiStudentBold } from "react-icons/pi";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import Logo from "@/assets/h-logo-light.png";
 import { motion } from "framer-motion";
+import type { Nav } from "@/lib/type";
 
-const Nav = () => {
-  const navLink = [
-    {
-      label: "Accueil",
-      path: "#home",
-      icon: <FaHome size={20} />,
-    },
-    {
-      label: "Compétences",
-      path: "#skills",
-      icon: <FaPen size={20} />,
-    },
-    {
-      label: "Parcours",
-      path: "#degrees",
-      icon: <PiStudentBold size={20} />,
-    },
-    {
-      label: "Projets",
-      path: "#projects",
-      icon: <PiStudentBold size={20} />,
-    },
-    {
-      label: "Expériences",
-      path: "#experiences",
-      icon: <FaBriefcase size={20} />,
-    },
-    {
-      label: "Contact",
-      path: "#contacts",
-      icon: <FaPhone size={20} />,
-    },
-  ];
+interface PropsNav {
+  lang: "fr" | "en";
+  setLang: React.Dispatch<React.SetStateAction<"fr" | "en">>;
+  nav?: Nav;
+}
 
-  const [lang, setLang] = useState<"EN" | "FR">("FR");
-  const langs = ["FR", "EN"];
-  // const [theme, setTheme] = useState<"dark" | "light">("dark");
+const NavComponent: React.FC<PropsNav> = ({ nav, lang, setLang }) => {
+  const langs = ["fr", "en"];
+
   const [scroll, setScroll] = useState(0);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -73,21 +37,11 @@ const Nav = () => {
   };
 
   const size = 35;
-
-  const socialNetworks = [
-    {
-      link: "#facebook",
-      icon: <FaFacebook size={size} />,
-    },
-    {
-      link: "#linkedin",
-      icon: <FaLinkedin size={size} />,
-    },
-    {
-      link: "#github",
-      icon: <FaGithub size={size} />,
-    },
-  ];
+  const socialNetworks: Record<string, ReactNode> = {
+    fafacebook: <FaFacebook size={size} />,
+    falinkedin: <FaLinkedin size={size} />,
+    fagithub: <FaGithub size={size} />,
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handlerScroll);
@@ -109,7 +63,7 @@ const Nav = () => {
           <img src={Logo} alt="logo" width={50} height={50} />
           <Select
             defaultValue={lang}
-            onValueChange={(value: "EN" | "FR") => {
+            onValueChange={(value: "en" | "fr") => {
               setLang(value);
             }}
           >
@@ -118,7 +72,7 @@ const Nav = () => {
             </SelectTrigger>
             <SelectContent className="bg-transparent border border-white" position="popper">
               <SelectGroup>
-                {langs.map((lg) => {
+                {langs?.map((lg) => {
                   return (
                     <SelectItem key={lg} value={lg} className="text-white bg-transparent py-2">
                       <SelectValue className="active:bg-slate-">{lg}</SelectValue>
@@ -130,27 +84,9 @@ const Nav = () => {
           </Select>
         </div>
         <div className="flex gap-2 items-center">
-          {/* <div className="flex border border-white rounded-full">
-            <div
-              className={`${
-                theme === "light" ? "bg-white" : ""
-              } p-2  rounded-[100%]  transition-all ease-in duration-200`}
-              onClick={() => setTheme("light")}
-            >
-              <FaSun color={theme === "light" ? "black" : "white"} size={20} />
-            </div>
-            <div
-              className={`${
-                theme === "dark" ? "bg-white" : ""
-              } p-2  rounded-[100%] transition-all ease-in duration-200`}
-              onClick={() => setTheme("dark")}
-            >
-              <FaMoon color={theme === "dark" ? "black" : "white"} size={20} />
-            </div>
-          </div> */}
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
-              {navLink.map((nav) => {
+              {nav?.list?.map((nav) => {
                 return (
                   <NavigationMenuItem key={`desktop-${nav.label}`}>
                     <NavigationMenuLink
@@ -175,7 +111,7 @@ const Nav = () => {
             </SheetTrigger>
             <SheetContent className=" text-white bg-primary/35 backdrop-blur-3xl border-0 transition-all ease-in duration-350 p-5">
               <nav className="flex flex-col gap-2 border-b border-slate-700 pb-5">
-                {navLink.map((nav, index) => {
+                {nav?.list?.map((nav, index) => {
                   return (
                     <motion.div
                       initial={{ opacity: 0, x: 100 }}
@@ -206,14 +142,14 @@ const Nav = () => {
                 })}
               </nav>
               <div className="flex gap-5 w-full mt-2">
-                {socialNetworks.map((socialNetwork) => {
+                {nav?.social?.map((socialNetwork) => {
                   return (
                     <a
                       key={socialNetwork.link}
                       href={socialNetwork.link}
                       className=" text-slate-100 hover:text-slate-500"
                     >
-                      {socialNetwork.icon}
+                      {socialNetworks[socialNetwork.icon.toLocaleLowerCase()]}
                     </a>
                   );
                 })}
@@ -226,4 +162,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default NavComponent;

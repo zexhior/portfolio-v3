@@ -1,0 +1,526 @@
+{
+  "nav": {
+    "list": [
+      {
+        "label": "Home",
+        "path": "#home",
+        "icon": "fahome"
+      },
+      {
+        "label": "Skills",
+        "path": "#skills",
+        "icon": "fapen"
+      },
+      {
+        "label": "Background",
+        "path": "#degrees",
+        "icon": "pistudentbold"
+      },
+      {
+        "label": "Projects",
+        "path": "#projects",
+        "icon": "pistudentbold"
+      },
+      {
+        "label": "Experiences",
+        "path": "#experiences",
+        "icon": "FaBriefcase"
+      },
+      {
+        "label": "Contact",
+        "path": "#contacts",
+        "icon": "faphone"
+      }
+    ],
+    "social": [
+      {
+        "link": "https://www.facebook.com/rasolonjatovo.herizo/",
+        "icon": "fafacebook"
+      },
+      {
+        "link": "https://www.linkedin.com/in/brice-herizo-rasolonjatovo-2991882a4",
+        "icon": "falinkedin"
+      },
+      {
+        "link": "https://github.com/zexhior",
+        "icon": "fagithub"
+      }
+    ]
+  },
+  "header": {
+    "intro": "Hello, I am Herizo",
+    "service": "Full Stack Developer specialized in designing modern, high-performance and scalable web applications.",
+    "getCV": "Get my resume",
+    "goToContact": "Contact me",
+    "social": [
+      {
+        "link": "https://www.facebook.com/rasolonjatovo.herizo/",
+        "icon": "fafacebook"
+      },
+      {
+        "link": "https://www.linkedin.com/in/brice-herizo-rasolonjatovo-2991882a4",
+        "icon": "falinkedin"
+      },
+      {
+        "link": "https://github.com/zexhior",
+        "icon": "fagithub"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "The technologies I use every day to build modern, robust and scalable web applications.",
+    "frontend": {
+      "title": "Frontend",
+      "web": [
+        {
+          "title": "Javascript",
+          "icon": "iologojavascript"
+        },
+        {
+          "title": "Typescript",
+          "icon": "bstypescript"
+        },
+        {
+          "title": "HTML5",
+          "icon": "fahtml5"
+        },
+        {
+          "title": "CSS3",
+          "icon": "facss3"
+        },
+        {
+          "title": "Tailwind",
+          "icon": "ritailwindcssfill"
+        },
+        {
+          "title": "React",
+          "icon": "fareact"
+        },
+        {
+          "title": "Next",
+          "icon": "rinextjsfill"
+        }
+      ],
+      "mobile": [
+        {
+          "title": "Flutter",
+          "icon": "faflutter"
+        }
+      ]
+    },
+    "backend": {
+      "title": "Database",
+      "tech": [
+        {
+          "title": "Python",
+          "icon": "fapython"
+        },
+        {
+          "title": "Django",
+          "icon": "didjango"
+        },
+        {
+          "title": "Adonis",
+          "icon": "siadonisjs"
+        },
+        {
+          "title": "Node",
+          "icon": "fanode"
+        }
+      ]
+    },
+    "db": {
+      "title": "Database",
+      "tech": [
+        {
+          "title": "Postgresql",
+          "icon": "sipostgresql"
+        },
+        {
+          "title": "MySQL",
+          "icon": "simysql"
+        },
+        {
+          "title": "MongoDB",
+          "icon": "simongodb"
+        }
+      ]
+    },
+    "tools": {
+      "title": "Tools",
+      "tech": [
+        {
+          "title": "Git",
+          "icon": "fagitalt"
+        },
+        {
+          "title": "Docker",
+          "icon": "FaDocker"
+        },
+        {
+          "title": "Trello",
+          "icon": "fatrello"
+        }
+      ]
+    }
+  },
+  "degrees": {
+    "title": "Background",
+    "subtitle": "My academic background, which allowed me to acquire strong skills in software development, software engineering and artificial intelligence.",
+    "degree": [
+      {
+        "title": "Master's degree in Business Computing, Software Engineering and Artificial Intelligence",
+        "description": "This Master's program at the Higher Polytechnic Institute of Madagascar allowed me to deepen my skills in software development, application architecture, artificial intelligence and IT project management. It also prepared me for professional requirements through an approach focused on software engineering best practices, code quality and complex project delivery."
+      },
+      {
+        "title": "Bachelor's degree in Business Computing, Software Engineering and Artificial Intelligence",
+        "description": "This Bachelor's degree allowed me to acquire strong foundations in programming, software design, database management and application development. The many projects completed during this course strengthened my ability to design reliable solutions adapted to user needs."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of projects I had the opportunity to work on.",
+    "project": [
+      {
+        "name": "Drilling Project Report Management System",
+        "tech": [
+          {
+            "tools": "Typescript",
+            "icon": "bstypescript"
+          },
+          {
+            "tools": "React",
+            "icon": "fareact"
+          },
+          {
+            "tools": "TailwindCSS",
+            "icon": "ritailwindcssfill"
+          },
+          {
+            "tools": "Django",
+            "icon": "didjango"
+          },
+          {
+            "tools": "Postgresql",
+            "icon": "sipostgresql"
+          },
+          {
+            "tools": "Docker",
+            "icon": "fadocker"
+          },
+          {
+            "tools": "Trello",
+            "icon": "fatrello"
+          },
+          {
+            "tools": "Git",
+            "icon": "fagitalt"
+          }
+        ],
+        "description": "Development of a mapping web application for monitoring drilling sites in Madagascar. The platform centralizes field report writing, work progress tracking, equipment management and project expense control.",
+        "photo": ["ForageLogin", "ForageMap"]
+      },
+      {
+        "name": "Codenames Multiplayer Game Clone",
+        "tech": [
+          {
+            "tools": "Typescript",
+            "icon": "BsTypescript"
+          },
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "TailwindCSS",
+            "icon": "RiTailwindCssFill"
+          },
+          {
+            "tools": "Django",
+            "icon": "DiDjango"
+          },
+          {
+            "tools": "Postgresql",
+            "icon": "SiPostgresql"
+          },
+          {
+            "tools": "Docker",
+            "icon": "FaDocker"
+          },
+          {
+            "tools": "Git",
+            "icon": "FaGitAlt"
+          }
+        ],
+        "description": "Development of an online version of the famous Codenames game, allowing multiple players to create private games and play simultaneously in a modern and interactive interface.",
+        "photo": ["CodeNameLogin", "CodeNameRoom"]
+      },
+      {
+        "name": "Custom T-Shirt E-commerce Website",
+        "tech": [
+          {
+            "tools": "Typescript",
+            "icon": "BsTypescript"
+          },
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "TailwindCSS",
+            "icon": "RiTailwindCssFill"
+          },
+          {
+            "tools": "Django",
+            "icon": "DiDjango"
+          },
+          {
+            "tools": "Postgresql",
+            "icon": "SiPostgresql"
+          },
+          {
+            "tools": "Docker",
+            "icon": "FaDocker"
+          },
+          {
+            "tools": "Git",
+            "icon": "FaGitAlt"
+          }
+        ],
+        "description": "A web application that allows users to order customized T-shirts by providing designs or texts to place on the T-shirt, with a demo feature allowing customers to preview their image on the T-shirt.",
+        "photo": ["Fabric"]
+      }
+    ]
+  },
+  "experiences": {
+    "title": "Experiences",
+    "subtitle": "The different professional experiences that helped develop my technical skills and my ability to lead projects.",
+    "experience": [
+      {
+        "duration": "August 2025 - February 2026",
+        "poste": "Fullstack Web Developer",
+        "firm": "Generis - Lab",
+        "tech": [
+          {
+            "tools": "Typescript",
+            "icon": "BsTypescript"
+          },
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "TailwindCSS",
+            "icon": "RiTailwindCssFill"
+          },
+          {
+            "tools": "AdonisJS",
+            "icon": "SiAdonisjs"
+          },
+          {
+            "tools": "Postgresql",
+            "icon": "SiPostgresql"
+          },
+          {
+            "tools": "Docker",
+            "icon": "FaDocker"
+          },
+          {
+            "tools": "Trello",
+            "icon": "FaTrello"
+          },
+          {
+            "tools": "Git",
+            "icon": "FaGitAlt"
+          }
+        ],
+        "description": "Development and maintenance of a quotation management platform dedicated to import-export operations. Contribution to designing new features, continuous application improvement and user experience optimization."
+      },
+      {
+        "duration": "February 2025 - May 2025",
+        "poste": "Fullstack Web Developer",
+        "firm": "Freelance",
+        "tech": [
+          {
+            "tools": "Javascript",
+            "icon": "FaJs"
+          },
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "Django",
+            "icon": "DiDjango"
+          },
+          {
+            "tools": "Python",
+            "icon": "FaPython"
+          },
+          {
+            "tools": "Mysql",
+            "icon": "SiMysql"
+          },
+          {
+            "tools": "Gitlab",
+            "icon": "FaGitlab"
+          }
+        ],
+        "description": "Design and development of a management web application for the hospitality and restaurant sector, including order management, inventory, equipment and daily operations."
+      },
+      {
+        "duration": "August 2024 - February 2025",
+        "poste": "Frontend Developer",
+        "firm": "Vatilab",
+        "tech": [
+          {
+            "tools": "Javascript",
+            "icon": "FaJs"
+          },
+          {
+            "tools": "Typescript",
+            "icon": "BsTypescript"
+          },
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "Angular",
+            "icon": "FaAngular"
+          },
+          {
+            "tools": "Flutter",
+            "icon": "FaFlutter"
+          },
+          {
+            "tools": "Strapi",
+            "icon": "SiStrapi"
+          },
+          {
+            "tools": "Figma",
+            "icon": "FaFigma"
+          },
+          {
+            "tools": "Trello",
+            "icon": "FaTrello"
+          },
+          {
+            "tools": "Gitlab",
+            "icon": "FaGitlab"
+          }
+        ],
+        "description": "Integration of UI/UX designs into web and mobile applications with React, Angular and Flutter. Development of modern, responsive and high-performance interfaces, as well as integration of APIs provided by backend teams."
+      },
+      {
+        "duration": "February 2024 - July 2024",
+        "poste": "Frontend Developer Intern",
+        "firm": "Vatilab",
+        "tech": [
+          {
+            "tools": "React",
+            "icon": "FaReact"
+          },
+          {
+            "tools": "Ionic",
+            "icon": "IoLogoIonic"
+          },
+          {
+            "tools": "Figma",
+            "icon": "FaFigma"
+          },
+          {
+            "tools": "Trello",
+            "icon": "FaTrello"
+          },
+          {
+            "tools": "Gitlab",
+            "icon": "FaGitlab"
+          }
+        ],
+        "description": "Participation in the development and maintenance of the B2B MyBeeDoo application. Implementation of new features and collaboration with backend teams to ensure smooth service integration."
+      },
+      {
+        "duration": "April 2021 - September 2021",
+        "poste": "Fullstack Developer Intern",
+        "firm": "Association Haikintana",
+        "tech": [
+          {
+            "tools": "Typescript",
+            "icon": "BsTypescript"
+          },
+          {
+            "tools": "Angular",
+            "icon": "FaAngular"
+          },
+          {
+            "tools": "Django",
+            "icon": "DiDjango"
+          },
+          {
+            "tools": "Mysql",
+            "icon": "SiMysql"
+          },
+          {
+            "tools": "Git",
+            "icon": "FaGitAlt"
+          }
+        ],
+        "description": "Development of a member and event management application for the association, including automatic badge generation, registration management and QR Code attendance tracking."
+      }
+    ]
+  },
+  "contacts": {
+    "title": "Let's talk about your project",
+    "subtitle": "Do you have a project or an opportunity? I would be happy to discuss it with you.",
+    "social": [
+      {
+        "link": "https://www.facebook.com/rasolonjatovo.herizo/",
+        "icon": "FaFacebook"
+      },
+      {
+        "link": "https://www.linkedin.com/in/brice-herizo-rasolonjatovo-2991882a4",
+        "icon": "FaLinkedin"
+      },
+      {
+        "link": "https://github.com/zexhior",
+        "icon": "FaGithub"
+      }
+    ],
+    "contact": [
+      {
+        "info": "+261382626428",
+        "icon": "FaPhone"
+      },
+      {
+        "info": "herizoras1@gmail.com",
+        "icon": "FaMailBulk"
+      },
+      {
+        "info": "Madagascar, Antananarivo 101",
+        "icon": "FaLocationPin"
+      }
+    ],
+    "form": {
+      "title": "Leave me a message",
+      "fields": [
+        {
+          "label": "Name: ",
+          "placeHolder": "Enter your name"
+        },
+        {
+          "label": "Email: ",
+          "placeHolder": "Enter your email address"
+        },
+        {
+          "label": "Message: ",
+          "placeHolder": "Describe your project or request"
+        }
+      ],
+      "send": "Send"
+    }
+  },
+  "footer": "©2026 Brice Herizo. All rights reserved."
+}

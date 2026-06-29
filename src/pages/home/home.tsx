@@ -1,32 +1,39 @@
-import Nav from "@/components/nav";
-import Header from "../header/header";
-import Skills from "../skills/skills";
-import Degrees from "../degrees/degrees";
-import Experiences from "../experiences/experiences";
-import Projects from "../projects/projects";
-import Contacts from "../contacts/contacts";
-import Footer from "../footer/footer";
+import NavComponent from "@/components/nav";
+import HeaderComponent from "@/pages/header/header";
+import SkillsComponent from "@/pages/skills/skills";
+import DegreesComponent from "@/pages/degrees/degrees";
+import ExperiencesComponent from "@/pages/experiences/experiences";
+import ProjectsComponent from "@/pages/projects/projects";
+import ContactsComponent from "@/pages/contacts/contacts";
+import Footer from "@/pages/footer/footer";
 import Aurora from "@/components/animation/aurora";
 import { Toaster } from "sonner";
 import Loader from "@/components/animation/loading";
 import { useEffect, useState } from "react";
+import { useGetData } from "@/hooks/data";
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [lang, setLang] = useState<"fr" | "en">("fr");
+  const [isLoadingExtra, setIsLoadingExtra] = useState<boolean>(true);
+  const { data, isLoading } = useGetData(lang);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 10000);
+      setIsLoadingExtra(false);
+    }, 5000);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [lang]);
 
   return (
     <>
-      {isLoading ? (
+      {isLoading || isLoadingExtra ? (
         <Loader />
       ) : (
-        <div className={`${isLoading ? "h-screen overflow-hidden" : "overflow-visible"}`}>
+        <div
+          className={`${
+            isLoading && isLoadingExtra ? "h-screen overflow-hidden" : "overflow-visible"
+          }`}
+        >
           <Toaster />
           <Aurora
             colorStops={["#7cff67", "#B497CF", "#5227FF"]}
@@ -35,14 +42,14 @@ const Home = () => {
             speed={1}
           ></Aurora>
           <div className="flex flex-col gap-10 px-5 md:px-0 mx-auto w-full md:max-w-4/5 overflow-x-clip md:overflow-x-visible">
-            <Nav />
-            <Header />
-            <Skills />
-            <Degrees />
-            <Projects />
-            <Experiences />
-            <Contacts />
-            <Footer />
+            <NavComponent lang={lang} setLang={setLang} nav={data?.nav} />
+            <HeaderComponent header={data?.header} />
+            <SkillsComponent skills={data?.skills} />
+            <DegreesComponent degrees={data?.degrees} />
+            <ProjectsComponent projects={data?.projects} />
+            <ExperiencesComponent experiences={data?.experiences} />
+            <ContactsComponent contacts={data?.contacts} />
+            <Footer footer={data?.footer} />
           </div>
         </div>
       )}
