@@ -89,7 +89,7 @@ const Contacts = () => {
               <div className="flex flex-col gap-2 my-5">
                 {contacts.map((contact) => {
                   return (
-                    <div className="flex items-center gap-2">
+                    <div key={contact.info} className="flex items-center gap-2">
                       {contact.icon} {contact.info}
                     </div>
                   );
