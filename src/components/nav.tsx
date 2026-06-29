@@ -164,7 +164,7 @@ const Nav = () => {
               })}
             </NavigationMenuList>
           </NavigationMenu>
-          <Sheet open={isOpen}>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger
               className="border border-white p-2 rounded-md flex md:hidden"
               onClick={() => {
@@ -173,7 +173,7 @@ const Nav = () => {
             >
               <RxHamburgerMenu />
             </SheetTrigger>
-            <SheetContent className="px-5 pt-15 text-white bg-primary border-0 shadow-[0_0_10px] shadow-slate-200/50">
+            <SheetContent className=" text-white bg-primary/35 backdrop-blur-3xl border-0 transition-all ease-in duration-350 p-5">
               <nav className="flex flex-col gap-2 border-b border-slate-700 pb-5">
                 {navLink.map((nav, index) => {
                   return (
