@@ -5,12 +5,81 @@ import { SiPostgresql } from "react-icons/si";
 import { BsTypescript } from "react-icons/bs";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { animationFadeInCustom, animationFadeInHover, animationFadeInRight } from "@/lib/style";
+import { animationFadeInCustom, animationFadeInHover } from "@/lib/style";
 import CodeNameLogin from "@/assets/code-name/code-name-login.png";
 import CodeNameRoom from "@/assets/code-name/code-name-room.png";
 import ForageLogin from "@/assets/forage/forage-login.png";
 import ForageMap from "@/assets/forage/forage-map.png";
 import Fabric from "@/assets/fabric/fabric.png";
+import Title from "@/components/title";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { type ReactNode } from "react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import Fade from "embla-carousel-fade";
+
+const Modal = ({
+  project,
+  children,
+}: {
+  project: {
+    name: string;
+    tech: { tools: string; icon: ReactNode }[];
+    description: string;
+    photo: string[];
+  };
+  children: ReactNode;
+}) => {
+  return (
+    <Dialog>
+      <DialogTrigger className="w-full md:w-1/2 h-100" asChild>
+        {children}
+      </DialogTrigger>
+      <DialogContent
+        className="sm:max-w-[80vw] h-[80vh] bg-secondary shadow-[0_0_10px] shadow-slate-200 transition-transform duration-500 ease-in-out"
+        showCloseButton={false}
+      >
+        <div className="flex h-full">
+          <div className="w-2/3 h-[80dvh] px-5">
+            <Carousel className="h-full w-full" plugins={[Fade(), Autoplay({ delay: 6000 })]}>
+              <CarouselContent className="h-[70dvh]">
+                {project.photo.map((photo) => {
+                  return (
+                    <CarouselItem className=" w-full h-full bg-primary">
+                      <img
+                        src={photo}
+                        alt={photo}
+                        className="w-full h-full object-contain rounded-lg"
+                      />
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+            </Carousel>
+          </div>
+          <div className="w-1/3 flex flex-col gap-4 text-slate-200 text-outfit">
+            <h3 className="text-4xl text-slate-500 text-oswald">{project.name}</h3>
+            <p>{project.description}</p>
+            <div className="flex flex-wrap gap-2">
+              {project.tech.map((tech) => {
+                return (
+                  <div
+                    key={`${project.name}-${tech.tools}`}
+                    className="flex items-center gap-2 bg-blue-950 text-xs rounded p-1"
+                  >
+                    {tech.icon}
+                    {tech.tools}
+                  </div>
+                );
+              })}
+            </div>
+            <Button>Demo Live</Button>
+          </div>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
 
 const Projects = () => {
   const projects = [
@@ -60,83 +129,48 @@ const Projects = () => {
       photo: [Fabric],
     },
   ];
-
   return (
     <div className="h-full">
-      <motion.h2
-        {...animationFadeInRight}
-        className="text-4xl text-slate-500 font-semibold text-oswald"
-      >
-        Projets
-      </motion.h2>
-      <motion.p {...animationFadeInRight} className="text-2xl mt-4 mb-10">
-        Voici les projets que j'ai réalisé :
-      </motion.p>
+      <Title title="Projets" subtitle="Voici les projets que j'ai réalisé :" />
       <div className="flex flex-col md:flex-row flex-wrap">
         {projects.map((project, index) => {
           return (
-            <motion.div
-              {...animationFadeInCustom({ amount: 0.3 })}
-              key={`${index}${project.name}`}
-              className={`flex flex-col p-2 w-full md:w-1/2 h-100`}
-            >
-              <div
-                className={`rounded-xl overflow-hidden shadow-[0_0_8px] shadow-slate-300/50 border border-slate-600 h-full aspect-video relative`}
+            <Modal project={project}>
+              <motion.div
+                {...animationFadeInCustom({ amount: 0.3 })}
+                key={`${index}${project.name}`}
+                className={`flex flex-col p-2 h-full`}
               >
-                <img
-                  src={project.photo[0]}
-                  alt={project.name}
-                  className="h-full w-full absolute inset-0 object-cover z-0"
-                />
-                <motion.div
-                  {...animationFadeInHover}
-                  className="flex flex-col justify-end items-start text-white z-10 relative h-full w-full p-10 bg-linear-to-b from-10% to-40% from-transparent to-slate-950/80"
+                <div
+                  className={`rounded-xl overflow-hidden shadow-[0_0_8px] shadow-slate-300/50 border border-slate-600 h-full aspect-video relative`}
                 >
-                  <h3 className="text-oswald text-2xl text-slate-100">{project.name}</h3>
-                  <div className="flex flex-wrap gap-2 my-2">
-                    {project.tech.map((tech) => {
-                      return (
-                        <div
-                          className="flex items-center gap-2 p-2 text-xs bg-primary rounded-md"
-                          key={`${project.name}-${tech.tools}`}
-                        >
-                          {tech.icon}
-                          {tech.tools}
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <Button className="bg-blue-900 w-fit">Demo Live</Button>
-                </motion.div>
-              </div>
-              {/* <Card className="flex flex-col bg-primary border border-slate-400 text-slate-200 h-full">
-                {" "}
-                <img
-                  src={project.photo[0]}
-                  alt="Event cover"
-                  className="relative z-20 aspect-video w-full object-cover"
-                />
-                <CardHeader className="flex flex-auto">
-                  <h3 className="text-oswald text-2xl">{project.name}</h3>
-                </CardHeader>
-                <CardFooter className="flex flex-col gap-4 h-full">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech) => {
-                      return (
-                        <div
-                          className="flex items-center gap-2 p-2 text-xs bg-secondary rounded-md"
-                          key={`${project.name}-${tech.tools}`}
-                        >
-                          {tech.icon}
-                          {tech.tools}
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <Button className="bg-blue-900 w-fit">Demo Live</Button>
-                </CardFooter>
-              </Card> */}
-            </motion.div>
+                  <img
+                    src={project.photo[0]}
+                    alt={project.name}
+                    className="h-full w-full absolute inset-0 object-cover z-0"
+                  />
+                  <motion.div
+                    {...animationFadeInHover}
+                    className="flex flex-col justify-end items-start text-white z-10 relative h-full w-full p-10 bg-linear-to-b from-10% to-40% from-transparent to-slate-950/80"
+                  >
+                    <h3 className="text-oswald text-2xl text-slate-100">{project.name}</h3>
+                    <div className="flex flex-wrap gap-2 my-2">
+                      {project.tech.map((tech) => {
+                        return (
+                          <div
+                            className="flex items-center gap-2 p-2 text-xs bg-primary rounded-md"
+                            key={`${project.name}-${tech.tools}`}
+                          >
+                            {tech.icon}
+                            {tech.tools}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+            </Modal>
           );
         })}
       </div>
