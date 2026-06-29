@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Loader = () => {
   return (
-    <div className="flex justify-center items-center h-full w-full backdrop-blur-3xl absolute top-0 left-0 z-100 bg-primary">
+    <div className="flex justify-center items-center h-full w-full backdrop-blur-3xl absolute top-0 left-0 z-100 bg-secondary">
       <motion.img
         initial={{ rotate: "0deg" }}
         animate={{ rotate: "360deg" }}
