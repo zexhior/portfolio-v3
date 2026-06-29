@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { FaBriefcase, FaHome, FaMoon, FaPen, FaPhone, FaSun } from "react-icons/fa";
+import { FaBriefcase, FaHome, FaPen, FaPhone } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PiStudentBold } from "react-icons/pi";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
@@ -56,7 +56,7 @@ const Nav = () => {
 
   const [lang, setLang] = useState<"EN" | "FR">("FR");
   const langs = ["FR", "EN"];
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  // const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [scroll, setScroll] = useState(0);
 
   const handlerScroll = () => {
@@ -104,7 +104,7 @@ const Nav = () => {
           </Select>
         </div>
         <div className="flex gap-2 items-center">
-          <div className="flex border border-white rounded-full">
+          {/* <div className="flex border border-white rounded-full">
             <div
               className={`${
                 theme === "light" ? "bg-white" : ""
@@ -121,7 +121,7 @@ const Nav = () => {
             >
               <FaMoon color={theme === "dark" ? "black" : "white"} size={20} />
             </div>
-          </div>
+          </div> */}
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               {navLink.map((nav) => {
