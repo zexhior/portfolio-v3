@@ -135,42 +135,43 @@ const Projects = () => {
       <div className="flex flex-col md:flex-row flex-wrap">
         {projects.map((project, index) => {
           return (
-            <Modal project={project}>
-              <motion.div
-                {...animationFadeInCustom({ amount: 0.3 })}
-                key={`${index}${project.name}`}
-                className={`flex flex-col p-2 h-full`}
-              >
-                <div
-                  className={`rounded-xl overflow-hidden shadow-[0_0_8px] shadow-slate-300/50 border border-slate-600 h-full aspect-video relative`}
+            <div key={`${index}${project.name}`}>
+              <Modal project={project}>
+                <motion.div
+                  {...animationFadeInCustom({ amount: 0.3 })}
+                  className={`flex flex-col p-2 h-full`}
                 >
-                  <img
-                    src={project.photo[0]}
-                    alt={project.name}
-                    className="h-full w-full absolute inset-0 object-cover z-0"
-                  />
-                  <motion.div
-                    {...animationFadeInHover}
-                    className="flex flex-col justify-end items-start text-white z-10 relative h-full w-full p-10 bg-linear-to-b from-10% to-40% from-transparent to-slate-950/80"
+                  <div
+                    className={`rounded-xl overflow-hidden shadow-[0_0_8px] shadow-slate-300/50 border border-slate-600 h-full aspect-video relative`}
                   >
-                    <h3 className="text-oswald text-2xl text-slate-100">{project.name}</h3>
-                    <div className="flex flex-wrap gap-2 my-2">
-                      {project.tech.map((tech) => {
-                        return (
-                          <div
-                            className="flex items-center gap-2 p-2 text-xs bg-primary rounded-md"
-                            key={`${project.name}-${tech.tools}`}
-                          >
-                            {tech.icon}
-                            {tech.tools}
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
-            </Modal>
+                    <img
+                      src={project.photo[0]}
+                      alt={project.name}
+                      className="h-full w-full absolute inset-0 object-cover z-0"
+                    />
+                    <motion.div
+                      {...animationFadeInHover}
+                      className="flex flex-col justify-end items-start text-white z-10 relative h-full w-full p-10 bg-linear-to-b from-10% to-40% from-transparent to-slate-950/80"
+                    >
+                      <h3 className="text-oswald text-2xl text-slate-100">{project.name}</h3>
+                      <div className="flex flex-wrap gap-2 my-2">
+                        {project.tech.map((tech) => {
+                          return (
+                            <div
+                              className="flex items-center gap-2 p-2 text-xs bg-primary rounded-md"
+                              key={`${project.name}-${tech.tools}`}
+                            >
+                              {tech.icon}
+                              {tech.tools}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </Modal>
+            </div>
           );
         })}
       </div>
