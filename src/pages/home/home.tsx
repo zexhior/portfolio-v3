@@ -22,7 +22,7 @@ const Home = () => {
       setIsLoadingExtra(false);
     }, 5000);
     return () => clearTimeout(timeout);
-  }, []);
+  }, [lang]);
 
   return (
     <>
