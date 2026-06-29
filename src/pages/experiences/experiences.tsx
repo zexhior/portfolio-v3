@@ -115,12 +115,12 @@ const Experiences = () => {
   return (
     <div id="experiences">
       <Title title="Expériences" subtitle="Voici les postes que j'ai déja occupé dans le passé :" />
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2 min-h-fit relative">
-          <div className="sticky top-30 w-full h-75 overflow-visible grid grid-cols-2 grid-rows-2 mt-20">
+          <div className="sticky top-30 w-full h-75 overflow-visible grid grid-cols-2 grid-rows-2 mt-0 md:mt-20">
             {logoFirm.map((firm) => {
               return (
-                <div className="w-ful h-full p-2">
+                <div key={firm} className="w-ful h-full p-2">
                   <img
                     src={firm}
                     alt={firm}
@@ -134,8 +134,8 @@ const Experiences = () => {
         <div className="w-full md:w-1/2">
           {experiences.map((experience) => {
             return (
-              <motion.div {...animationFadeInRight} className="w-full">
-                <Card key={experience.duration} className="bg-transparent text-slate-200 border-0">
+              <motion.div {...animationFadeInRight} className="w-full" key={experience.duration}>
+                <Card className="bg-transparent text-slate-200 border-0">
                   <CardHeader>
                     <CardTitle>
                       <span className="text-xl text-oswald">{experience.poste}</span>{" "}

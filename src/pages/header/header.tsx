@@ -23,10 +23,6 @@ const Header = () => {
     },
   ];
 
-  const handleAnimationComplete = () => {
-    console.log("Animation completed!");
-  };
-
   const handleDownload = () => {
     // 1. Specify the URL and the desired filename
     const fileUrl = "/CV_Herizo_Dev_Fullstack.pdf";
@@ -71,7 +67,6 @@ const Header = () => {
           delay={200}
           animateBy="words"
           direction="top"
-          onAnimationComplete={handleAnimationComplete}
           className="text-2xl mb-8 text-slate-300"
         />
         <div className="flex gap-5 w-full mt-2">

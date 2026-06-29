@@ -13,9 +13,9 @@ const Loader = () => {
         }}
         src={Logo}
         alt="loader"
-        width={200}
-        height={200}
-        className="border-x-8 border-y-slate-500/10 border-x-slate-100 border-y-8 rounded-full p-2"
+        width={150}
+        height={150}
+        className="border-x-8 border-y-slate-500/10 border-x-slate-100 border-y-8 rounded-full p-4"
       />
     </div>
   );
