@@ -1,6 +1,6 @@
 import Me from "@/assets/me.png";
 import { motion } from "framer-motion";
-import { animationFadeIn } from "@/lib/style";
+import { animationFadeIn, animationFadeInRight } from "@/lib/style";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import BlurText from "@/components/BlurText";
@@ -63,14 +63,9 @@ const Header = () => {
       className="flex flex-col md:flex-row items-center justify-center w-full relative h-auto my-20 md:m-0 md:h-screen"
     >
       <motion.div {...animationFadeIn} className="w-full md:w-1/2">
-        <BlurText
-          text="Bienvenue! Je suis Herizo"
-          delay={200}
-          animateBy="words"
-          direction="top"
-          onAnimationComplete={handleAnimationComplete}
-          className="text-5xl mb-8 text-slate-300"
-        />
+        <motion.h3 {...animationFadeInRight} className="text-5xl text-slate-400 text-oswald mb-3">
+          Bienvenue! Je suis Herizo
+        </motion.h3>
         <BlurText
           text="Je suis développeur web fullstack et je transforme vos idées en solutions web performantes."
           delay={200}
