@@ -49,8 +49,8 @@
       ]
     },
     "header": {
-      "intro": "Bienvenue! Je suis Herizo",
-      "service": "Je suis développeur web fullstack et je transforme vos idées en solutions web performantes.",
+      "intro": "Bonjour, je suis Herizo",
+      "service": "Développeur Full Stack spécialisé dans la conception d'applications web modernes, performantes et évolutives.",
       "getCV": "Obtenir mon CV",
       "goToContact": "Contacter moi",
       "social": [
@@ -70,7 +70,7 @@
     },
     "skills": {
       "title": "Compétences",
-      "subtitle": "Voici les langages, les frameworks et outils que j'utilise pour mon travail",
+      "subtitle": "Les technologies que j'utilise au quotidien pour concevoir des applications web modernes, robustes et évolutives.",
       "frontend": {
         "title": "Frontend",
         "web": [
@@ -168,24 +168,24 @@
     },
     "degrees": {
       "title": "Parcours",
-      "subtitle": "Voici les diplômes academique que j'ai reçu lors de mes études.",
+      "subtitle": "Mon parcours académique, qui m'a permis d'acquérir de solides compétences en développement logiciel, en génie logiciel et en intelligence artificielle.",
       "degree": [
         {
           "title": "Master en Informatique de Gestion, Génie Logiciel et Intelligence Artificielle",
-          "description": "Cette formation de Master à l'Institut Supérieur Polytechnique de Madagascar m'a permis d'approfondir mes compétences en développement logiciel, en gestion de projets informatiques et en intelligence artificielle. Elle m'a également préparé au monde professionnel en me familiarisant avec les méthodes de travail, les bonnes pratiques du génie logiciel et les enjeux des projets informatiques complexes."
+          "description": "Cette formation de Master à l'Institut Supérieur Polytechnique de Madagascar m'a permis d'approfondir mes compétences en développement logiciel, en architecture applicative, en intelligence artificielle et en gestion de projets informatiques. Elle m'a également préparé aux exigences du monde professionnel grâce à une approche axée sur les bonnes pratiques du génie logiciel, la qualité du code et la réalisation de projets complexes."
         },
         {
           "title": "Licence en Informatique de Gestion, Génie Logiciel et Intelligence Artificielle",
-          "description": "Cette formation de Licence à l'Institut Supérieur Polytechnique de Madagascar m'a permis d'acquérir de solides bases en programmation, en génie logiciel et en gestion de bases de données. Les projets académiques réalisés au cours de ce cursus ont contribué à développer mes compétences techniques et à construire les fondations nécessaires pour évoluer dans un environnement professionnel."
+          "description": "Cette Licence m'a permis d'acquérir de solides bases en programmation, en conception logicielle, en gestion des bases de données et en développement d'applications. Les nombreux projets réalisés durant ce cursus ont renforcé ma capacité à concevoir des solutions fiables et adaptées aux besoins des utilisateurs."
         }
       ]
     },
     "projects": {
       "title": "Projets",
-      "subtitle": "Voici les projets que j'ai réalisé :",
+      "subtitle": "Une sélection de projets sur lesquels j'ai eu l'opportunité de travailler.",
       "project": [
         {
-          "name": "Gestion de rapport de projet génie civile de forage",
+          "name": "Système de gestion des rapports de projets de forage",
           "tech": [
             { "tools": "Typescript", "icon": "bstypescript" },
             { "tools": "React", "icon": "fareact" },
@@ -196,11 +196,11 @@
             { "tools": "Trello", "icon": "fatrello" },
             { "tools": "Git", "icon": "fagitalt" }
           ],
-          "description": "Appication web se basant sur une carte de Madagascar pour trouver les coordonnées des travaux et d'écrire les rapports surs la gestion des matériels, l'état d'avancement du projet et les dépenses lors de la réalisation du projet",
+          "description": "Développement d'une application web cartographique permettant de suivre les chantiers de forage à Madagascar. La plateforme centralise la rédaction des rapports de terrain, le suivi de l'avancement des travaux, la gestion des équipements ainsi que le contrôle des dépenses liées aux projets.",
           "photo": ["ForageLogin", "ForageMap"]
         },
         {
-          "name": "Clone du jeu video CodeName",
+          "name": "Clone multijoueur du jeu Codenames",
           "tech": [
             { "tools": "Typescript", "icon": "BsTypescript" },
             { "tools": "React", "icon": "FaReact" },
@@ -210,7 +210,7 @@
             { "tools": "Docker", "icon": "FaDocker" },
             { "tools": "Git", "icon": "FaGitAlt" }
           ],
-          "description": "Une clone du jeu vide CodeName qui peut être jouer en multijoueur",
+          "description": "Développement d'une version en ligne du célèbre jeu Codenames, permettant à plusieurs joueurs de créer des parties privées et de jouer simultanément dans une interface moderne et interactive.",
           "photo": ["CodeNameLogin", "CodeNameRoom"]
         },
         {
@@ -231,7 +231,7 @@
     },
     "experiences": {
       "title": "Expériences",
-      "subtitle": "Voici les postes que j'ai déja occupé dans le passé :",
+      "subtitle": "Les différentes expériences professionnelles qui ont contribué à développer mes compétences techniques et ma capacité à mener des projets.",
       "experience": [
         {
           "duration": "Août 2025 - Février 2026",
@@ -247,7 +247,7 @@
             { "tools": "Trello", "icon": "FaTrello" },
             { "tools": "Git", "icon": "FaGitAlt" }
           ],
-          "description": "Maintenance et conception de features d'une application de quotation pour l'exportation et l'importation de marchandise d'un pays à un autre"
+          "description": "Développement et maintenance d'une plateforme de gestion de devis (quotation) dédiée aux opérations d'import-export. Participation à la conception de nouvelles fonctionnalités, à l'amélioration continue de l'application et à l'optimisation de l'expérience utilisateur."
         },
         {
           "duration": "Février 2025 - Mai 2025",
@@ -261,7 +261,7 @@
             { "tools": "Mysql", "icon": "SiMysql" },
             { "tools": "Gitlab", "icon": "FaGitlab" }
           ],
-          "description": "Conception d'une application web pour la gestion des commandes, des stocks et des matériels d'un réstaurant et d'un hôtel"
+          "description": "Conception et développement d'une application web de gestion destinée au secteur de l'hôtellerie-restauration, intégrant la gestion des commandes, des stocks, des équipements et des opérations quotidiennes."
         },
         {
           "duration": "Août 2024 - Février 2025",
@@ -278,7 +278,7 @@
             { "tools": "Trello", "icon": "FaTrello" },
             { "tools": "Gitlab", "icon": "FaGitlab" }
           ],
-          "description": "Intégrer les maquettes fournis par les experts design avec les téchnologies React, Angular et Flutter et assurer la consommation d'API réaliser par les développeurs backend"
+          "description": "Intégration de maquettes UI/UX en applications web et mobiles avec React, Angular et Flutter. Développement d'interfaces modernes, responsives et performantes, ainsi qu'intégration des API fournies par les équipes backend."
         },
         {
           "duration": "Février 2024 - Juillet 2024",
@@ -291,7 +291,7 @@
             { "tools": "Trello", "icon": "FaTrello" },
             { "tools": "Gitlab", "icon": "FaGitlab" }
           ],
-          "description": "Maintenance et conception de nouvelles fonctionnalité pour l'application B2B mybeedoo et assurer la bonne relation entre le frontend et le backend."
+          "description": "Participation au développement et à la maintenance de l'application B2B MyBeeDoo. Mise en œuvre de nouvelles fonctionnalités et collaboration avec les équipes backend afin d'assurer une intégration fluide des services."
         },
         {
           "duration": "Avril 2021 - Septembre 2021",
@@ -304,13 +304,13 @@
             { "tools": "Mysql", "icon": "SiMysql" },
             { "tools": "Git", "icon": "FaGitAlt" }
           ],
-          "description": "Conception d'un application de gestion des membres de l'association ainsi que les évènements avec une génération de badge pour chaque membre et le scan du CodeQR pour le pointage."
+          "description": "Développement d'une application de gestion des membres et des événements de l'association, incluant la génération automatique de badges, la gestion des inscriptions ainsi que le pointage via QR Code."
         }
       ]
     },
     "contacts": {
-      "title": "Besoin de mes services?",
-      "subtitle": "N'hesitez pas à me contacter",
+      "title": "Parlons de votre projet",
+      "subtitle": "Vous avez un projet ou une opportunité ? Je serai ravi d'échanger avec vous.",
       "social": [
         {
           "link": "#facebook",
@@ -340,19 +340,19 @@
         }
       ],
       "form": {
-        "title": "Envoyez-moi un message",
+        "title": "Laissez-moi un message",
         "fields": [
           {
             "label": "Nom : ",
-            "placeHolder": "Saisir votre nom"
+            "placeHolder": "Saisissez votre nom"
           },
           {
             "label": "Email : ",
-            "placeHolder": "Saisir votre email"
+            "placeHolder": "Saisissez votre adresse e-mail"
           },
           {
             "label": "Message : ",
-            "placeHolder": "Saisir votre nom"
+            "placeHolder": "Décrivez votre projet ou votre demande"
           }
         ],
         "send": "Envoyer"

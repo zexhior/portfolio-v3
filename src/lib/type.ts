@@ -39,9 +39,9 @@ export interface Degrees {
 export interface Projects {
   title: string;
   subtitle: string;
-  projet: {
+  project: {
     name: string;
-    tech: { tool: string; icon: string }[];
+    tech: { tools: string; icon: string }[];
     description: string;
     photo: string[];
   }[];
