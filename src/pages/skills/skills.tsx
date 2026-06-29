@@ -18,6 +18,10 @@ import { DiDjango } from "react-icons/di";
 import { SiAdonisjs, SiMongodb, SiMysql, SiPostgresql } from "react-icons/si";
 import { BsDatabase, BsTypescript, BsWindowStack } from "react-icons/bs";
 import { MdWebAsset } from "react-icons/md";
+import { motion } from "framer-motion";
+import { animationFadeIn } from "@/lib/style";
+import Title from "@/components/title";
+import SpotlightCard from "@/components/SpotlightCard";
 
 interface Skill {
   title: string;
@@ -26,11 +30,22 @@ interface Skill {
 
 const SkillComponent = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="w-full md:w-1/3 flex p-4">
-      <Card className="w-full bg-secondary-800/80 backdrop-blur-xl hover:scale-105 border text-slate-300 transition-all">
-        <CardContent className="flex flex-col gap-4 ">{children}</CardContent>
+    <motion.div
+      {...animationFadeIn}
+      whileHover={{ scale: 1.05 }}
+      className="w-full md:w-1/3 flex p-2"
+    >
+      <Card className="h-full text-slate-200 w-full p-0 bg-blue-950/10 backdrop-blur-4xl overflow-visible">
+        <CardContent className="h-full w-full p-0">
+          <SpotlightCard
+            className="flex flex-col gap-4 h-full w-full p-0 m-0 bg-transparent border border-slate-500"
+            spotlightColor="rgba(0, 229, 255, 0.2)"
+          >
+            {children}
+          </SpotlightCard>
+        </CardContent>
       </Card>
-    </div>
+    </motion.div>
   );
 };
 
@@ -39,7 +54,10 @@ const SkillContent = ({ skills }: { skills: Skill[] }) => {
     <div className="flex flex-wrap gap-2 ps-2">
       {skills.map((tech) => {
         return (
-          <div key={tech.title} className="flex gap-2 items-center bg-primary p-2 rounded-md">
+          <div
+            key={tech.title}
+            className="flex gap-2 items-center bg-primary p-2 rounded-md hover:bg-blue-950 transition ease-in-out duration-200 cursor-pointer"
+          >
             {tech.icon}
             <p className="text-xs">{tech.title}</p>
           </div>
@@ -142,10 +160,11 @@ const Skills = () => {
 
   return (
     <div>
-      <h2 className="text-4xl text-slate-500 font-semibold text-oswald">Compétences</h2>
-      <p className="text-2xl mt-4 mb-10">
-        Voici les langages, les frameworks et outils que j'utilise pour mon travail
-      </p>
+      <Title
+        title="
+        Compétences"
+        subtitle="Voici les langages, les frameworks et outils que j'utilise pour mon travail"
+      />
       <div className="flex flex-wrap">
         <SkillComponent>
           <div className="flex gap-2 text-slate-500 items-center text-xl font-semibold">

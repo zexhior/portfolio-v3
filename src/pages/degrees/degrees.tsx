@@ -1,4 +1,8 @@
+import GlareHover from "@/components/GlareHover";
+import Title from "@/components/title";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { animationFadeIn } from "@/lib/style";
+import { motion } from "framer-motion";
 
 interface IDegrees {
   title: string;
@@ -21,29 +25,43 @@ const Degrees = () => {
 
   return (
     <div className="py-5">
-      <h2 className="text-4xl text-slate-500 font-semibold text-oswald">Parcours</h2>
-      <p className="text-2xl mt-4 mb-10">
-        Voici les diplômes academique que j'ai reçu lors de mes études.
-      </p>
-      <div className="flex flex-col md:flex-row gap-5">
+      <Title
+        title="
+        Parcours"
+        subtitle="
+        Voici les diplômes academique que j'ai reçu lors de mes études."
+      />
+      <motion.div {...animationFadeIn} className="flex flex-col md:flex-row gap-5 max-h-fit">
         {degrees.map((degree) => {
           return (
-            <Card
-              key={degree.title}
-              className="border border-slate-500 bg-secondary text-white p-4 md:p-10"
-            >
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold text-oswald">
-                  <p className="text-slate-500">{degree.title}</p>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p>{degree.description}</p>
-              </CardContent>
-            </Card>
+            <div key={degree.title} className="w-full max-h-fit">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.3}
+                glareAngle={-30}
+                glareSize={300}
+                transitionDuration={800}
+                playOnce={false}
+                background="#000719"
+                height="auto"
+                borderRadius="25px"
+                width="100%"
+              >
+                <Card className="bg-transparent text-slate-200 h-full">
+                  <CardHeader>
+                    <CardTitle className="text-xl font-semibold text-oswald">
+                      <p className="text-slate-500">{degree.title}</p>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p>{degree.description}</p>
+                  </CardContent>
+                </Card>
+              </GlareHover>
+            </div>
           );
         })}
-      </div>
+      </motion.div>
     </div>
   );
 };

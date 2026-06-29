@@ -7,17 +7,19 @@ import Projects from "../projects/projects";
 import Contacts from "../contacts/contacts";
 import Footer from "../footer/footer";
 import Aurora from "@/components/animation/aurora";
+import { Toaster } from "sonner";
 
 const Home = () => {
   return (
     <div>
+      <Toaster />
       <Aurora
         colorStops={["#7cff67", "#B497CF", "#5227FF"]}
         blend={0.5}
         amplitude={1.0}
         speed={1}
       ></Aurora>
-      <div className="flex flex-col gap-10 px-5 md:px-0 mx-auto w-full md:max-w-4/5">
+      <div className="flex flex-col gap-10 px-5 md:px-0 mx-auto w-full md:max-w-4/5 overflow-x-clip md:overflow-x-visible">
         <Nav />
         <Header />
         <Skills />
