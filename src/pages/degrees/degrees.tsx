@@ -2,37 +2,19 @@ import GlareHover from "@/components/GlareHover";
 import Title from "@/components/title";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { animationFadeIn } from "@/lib/style";
+import type { Degrees } from "@/lib/type";
 import { motion } from "framer-motion";
 
-interface IDegrees {
-  title: string;
-  description: string;
+interface PropsDegrees {
+  degrees?: Degrees;
 }
 
-const Degrees = () => {
-  const degrees: IDegrees[] = [
-    {
-      title: "Master en Informatique de Gestion, Génie Logiciel et Intelligence Artificielle",
-      description:
-        "Cette formation de Master à l'Institut Supérieur Polytechnique de Madagascar m'a permis d'approfondir mes compétences en développement logiciel, en gestion de projets informatiques et en intelligence artificielle. Elle m'a également préparé au monde professionnel en me familiarisant avec les méthodes de travail, les bonnes pratiques du génie logiciel et les enjeux des projets informatiques complexes.",
-    },
-    {
-      title: "Licence en Informatique de Gestion, Génie Logiciel et Intelligence Artificielle",
-      description:
-        "Cette formation de Licence à l'Institut Supérieur Polytechnique de Madagascar m'a permis d'acquérir de solides bases en programmation, en génie logiciel et en gestion de bases de données. Les projets académiques réalisés au cours de ce cursus ont contribué à développer mes compétences techniques et à construire les fondations nécessaires pour évoluer dans un environnement professionnel.",
-    },
-  ];
-
+const Degrees: React.FC<PropsDegrees> = ({ degrees }) => {
   return (
     <div id="degrees" className="py-5">
-      <Title
-        title="
-        Parcours"
-        subtitle="
-        Voici les diplômes academique que j'ai reçu lors de mes études."
-      />
+      <Title title={degrees?.title ?? ""} subtitle={degrees?.subtitle ?? ""} />
       <motion.div {...animationFadeIn} className="flex flex-col md:flex-row gap-5 max-h-fit">
-        {degrees.map((degree) => {
+        {degrees?.degree.map((degree) => {
           return (
             <div key={degree.title} className="w-full max-h-fit">
               <GlareHover
