@@ -130,7 +130,7 @@ const Projects = () => {
     },
   ];
   return (
-    <div className="h-full">
+    <div id="projects" className="h-full">
       <Title title="Projets" subtitle="Voici les projets que j'ai réalisé :" />
       <div className="flex flex-col md:flex-row flex-wrap">
         {projects.map((project, index) => {

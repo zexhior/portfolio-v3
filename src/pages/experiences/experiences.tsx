@@ -18,7 +18,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Title from "@/components/title";
 import { motion } from "framer-motion";
 import { animationFadeInRight } from "@/lib/style";
-import MetaBalls from "@/components/MetaBalls";
+import Generis from "@/assets/logo/Generis-removebg.png";
+import Vatilab from "@/assets/logo/Vatilab-removebg.png";
+import Haikintana from "@/assets/logo/Haikintana-removebg.png";
+import Logo from "@/assets/h-logo-dark.png";
 
 const Experiences = () => {
   const experiences = [
@@ -107,24 +110,25 @@ const Experiences = () => {
     },
   ];
 
+  const logoFirm = [Generis, Logo, Vatilab, Haikintana];
+
   return (
-    <div>
+    <div id="experiences">
       <Title title="Expériences" subtitle="Voici les postes que j'ai déja occupé dans le passé :" />
       <div className="flex">
         <div className="w-full md:w-1/2 min-h-fit relative">
-          <div className="sticky top-20 w-full h-72 overflow-visible">
-            <MetaBalls
-              color="#ffffff"
-              cursorBallColor="#000f33"
-              cursorBallSize={2}
-              ballCount={15}
-              animationSize={20}
-              enableMouseInteraction
-              enableTransparency={true}
-              hoverSmoothness={0.15}
-              clumpFactor={1}
-              speed={0.3}
-            />
+          <div className="sticky top-30 w-full h-75 overflow-visible grid grid-cols-2 grid-rows-2 mt-20">
+            {logoFirm.map((firm) => {
+              return (
+                <div className="w-ful h-full p-2">
+                  <img
+                    src={firm}
+                    alt={firm}
+                    className="h-full w-full object-contain  bg-slate-100 backdrop-blur-3xl rounded-md"
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
         <div className="w-full md:w-1/2">

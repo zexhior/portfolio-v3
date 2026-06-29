@@ -13,44 +13,50 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { FaBriefcase, FaHome, FaMoon, FaPen, FaPhone, FaSun } from "react-icons/fa";
+import { FaBriefcase, FaHome, FaPen, FaPhone } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PiStudentBold } from "react-icons/pi";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Link } from "react-router-dom";
+import Logo from "@/assets/h-logo-light.png";
 
 const Nav = () => {
   const navLink = [
     {
       label: "Accueil",
-      path: "/",
+      path: "#home",
       icon: <FaHome size={20} />,
     },
     {
       label: "Compétences",
-      path: "/skills",
+      path: "#skills",
       icon: <FaPen size={20} />,
     },
     {
       label: "Parcours",
-      path: "/parcours",
+      path: "#degrees",
+      icon: <PiStudentBold size={20} />,
+    },
+    {
+      label: "Projets",
+      path: "#projects",
       icon: <PiStudentBold size={20} />,
     },
     {
       label: "Expériences",
-      path: "/experiences",
+      path: "#experiences",
       icon: <FaBriefcase size={20} />,
     },
     {
       label: "Contact",
-      path: "/contacts",
+      path: "#contacts",
       icon: <FaPhone size={20} />,
     },
   ];
 
   const [lang, setLang] = useState<"EN" | "FR">("FR");
   const langs = ["FR", "EN"];
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  // const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [scroll, setScroll] = useState(0);
 
   const handlerScroll = () => {
@@ -74,7 +80,7 @@ const Nav = () => {
         } mx-auto flex w-full px-5 md:max-w-4/5 items-center justify-between py-2 md:px-2 transition-all ease-in duration-75 rounded-full`}
       >
         <div className="flex items-center gap-4">
-          <p>Logo</p>
+          <img src={Logo} alt="logo" width={50} height={50} />
           <Select
             defaultValue={lang}
             onValueChange={(value: "EN" | "FR") => {
@@ -98,7 +104,7 @@ const Nav = () => {
           </Select>
         </div>
         <div className="flex gap-2 items-center">
-          <div className="flex border border-white rounded-full">
+          {/* <div className="flex border border-white rounded-full">
             <div
               className={`${
                 theme === "light" ? "bg-white" : ""
@@ -115,14 +121,14 @@ const Nav = () => {
             >
               <FaMoon color={theme === "dark" ? "black" : "white"} size={20} />
             </div>
-          </div>
+          </div> */}
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               {navLink.map((nav) => {
                 return (
                   <NavigationMenuItem key={`desktop-${nav.label}`}>
-                    <NavigationMenuLink className="hover:bg-blue-500/50 transition-all ease-in duration-75 cursor-pointer">
-                      {nav.label}
+                    <NavigationMenuLink className="hover:bg-slate-500/50 bg-transparent transition-all ease-in duration-200 cursor-pointer">
+                      <a href={nav.path}>{nav.label}</a>
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 );
