@@ -71,3 +71,19 @@ export default defineConfig([
   },
 ])
 ```
+
+## Docker
+
+Run the app in development mode:
+
+```bash
+docker compose up app
+```
+
+Build and serve a production version:
+
+```bash
+docker compose up app-prod
+```
+
+Then open http://localhost:5173 for development or http://localhost:3000 for production.
