@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      target: development
+    container_name: portfolio-v3-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      CHOKIDAR_USEPOLLING: true
+
+  app-prod:
+    build:
+      context: .
+      target: production
+    container_name: portfolio-v3-prod
+    ports:
+      - "3000:80"
