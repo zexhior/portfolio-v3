@@ -1,8 +1,7 @@
 FROM node:22-alpine AS base
 WORKDIR /app
 
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
+ENV VITE_BASE_URL_N8N=https://training.brice-herizo.cloud
 
 RUN corepack enable
 
