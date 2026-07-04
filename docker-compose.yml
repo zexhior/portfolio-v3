@@ -1,8 +1,7 @@
 services:
   app:
-    build:
-      context: .
-      target: production
+    build: ./
+    image: portfolio
     container_name: portfolio-v3-dev
     ports:
       - "5173:5173"
