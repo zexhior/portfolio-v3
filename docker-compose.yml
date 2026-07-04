@@ -2,7 +2,7 @@ services:
   app:
     build:
       context: .
-      target: development
+      target: production
     container_name: portfolio-v3-dev
     ports:
       - "5173:5173"
@@ -11,11 +11,3 @@ services:
       - /app/node_modules
     environment:
       VITE_BASE_URL_N8N: https://training.brice-herizo.cloud/
-
-  app-prod:
-    build:
-      context: .
-      target: production
-    container_name: portfolio-v3-prod
-    ports:
-      - "3000:80"
