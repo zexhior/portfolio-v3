@@ -1,4 +1,4 @@
-import { client } from "@/lib/api";
+import { clientN8N } from "@/lib/api";
 import { useMutation, type UseMutationResult } from "@tanstack/react-query";
 
 interface Message {
@@ -11,7 +11,8 @@ export const useSendMessage = (): UseMutationResult<Message, unknown, Message> =
   return useMutation<Message, unknown, Message>({
     mutationKey: [],
     mutationFn: async (message: Message) => {
-      const result = await client.post<Message>("api/message/", message);
+      const result = await clientN8N.post<Message>("webhook-test/message", message);
+
       return result.data;
     },
   });
