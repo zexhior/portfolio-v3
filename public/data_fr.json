@@ -220,7 +220,8 @@
           }
         ],
         "description": "Développement d'une application web cartographique permettant de suivre les chantiers de forage à Madagascar. La plateforme centralise la rédaction des rapports de terrain, le suivi de l'avancement des travaux, la gestion des équipements ainsi que le contrôle des dépenses liées aux projets.",
-        "photo": ["ForageLogin", "ForageMap"]
+        "photo": ["ForageLogin", "ForageMap"],
+        "link": "https://forage.brice-herizo.cloud/login"
       },
       {
         "name": "Clone multijoueur du jeu Codenames",
@@ -255,7 +256,8 @@
           }
         ],
         "description": "Développement d'une version en ligne du célèbre jeu Codenames, permettant à plusieurs joueurs de créer des parties privées et de jouer simultanément dans une interface moderne et interactive.",
-        "photo": ["CodeNameLogin", "CodeNameRoom"]
+        "photo": ["CodeNameLogin", "CodeNameRoom"],
+        "link": ""
       },
       {
         "name": "Siteweb d'E-commerce de vente de T-Shirt personnalisé",
@@ -290,7 +292,8 @@
           }
         ],
         "description": "Une application web qui permet de faire des commandes de t-shirt personnalisés en fournissant les motifs ou textes à mettre sur le t-shirt dôté d'une fonctionnalité de démonstration pour permettre au client de voir son image sur le t-shirt",
-        "photo": ["Fabric"]
+        "photo": ["Fabric"],
+        "link": "https://impression.brice-herizo.cloud/"
       }
     ]
   },

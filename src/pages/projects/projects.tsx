@@ -21,6 +21,7 @@ interface IModal extends React.AllHTMLAttributes<HTMLDivElement> {
     tech: { tools: string; icon: string }[];
     description: string;
     photo: string[];
+    link: string;
   };
   children: ReactNode;
 }
@@ -81,7 +82,13 @@ const Modal: React.FC<IModal> = ({ project, children, ...props }) => {
                 );
               })}
             </div>
-            <Button>Demo Live</Button>
+            {project?.link && (
+              <Button asChild>
+                <a href={project?.link} target="_blank" rel="noopener noreferrer">
+                  Demo Live
+                </a>
+              </Button>
+            )}
           </div>
         </div>
       </DialogContent>

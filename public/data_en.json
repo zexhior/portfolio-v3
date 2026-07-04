@@ -220,7 +220,8 @@
           }
         ],
         "description": "Development of a mapping web application for monitoring drilling sites in Madagascar. The platform centralizes field report writing, work progress tracking, equipment management and project expense control.",
-        "photo": ["ForageLogin", "ForageMap"]
+        "photo": ["ForageLogin", "ForageMap"],
+        "link": "https://forage.brice-herizo.cloud/login"
       },
       {
         "name": "Codenames Multiplayer Game Clone",
@@ -255,7 +256,8 @@
           }
         ],
         "description": "Development of an online version of the famous Codenames game, allowing multiple players to create private games and play simultaneously in a modern and interactive interface.",
-        "photo": ["CodeNameLogin", "CodeNameRoom"]
+        "photo": ["CodeNameLogin", "CodeNameRoom"],
+        "link": ""
       },
       {
         "name": "Custom T-Shirt E-commerce Website",
@@ -290,7 +292,8 @@
           }
         ],
         "description": "A web application that allows users to order customized T-shirts by providing designs or texts to place on the T-shirt, with a demo feature allowing customers to preview their image on the T-shirt.",
-        "photo": ["Fabric"]
+        "photo": ["Fabric"],
+        "link": "https://impression.brice-herizo.cloud/"
       }
     ]
   },

@@ -44,6 +44,7 @@ export interface Projects {
     tech: { tools: string; icon: string }[];
     description: string;
     photo: string[];
+    link: string;
   }[];
 }
 
