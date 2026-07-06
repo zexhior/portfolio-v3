@@ -110,7 +110,7 @@
       ]
     },
     "backend": {
-      "title": "Base de données",
+      "title": "Backend",
       "tech": [
         {
           "title": "Python",
