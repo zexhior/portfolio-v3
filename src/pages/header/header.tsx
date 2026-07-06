@@ -59,7 +59,7 @@ const HeaderComponent: React.FC<PropsHeader> = ({ header }) => {
           direction="top"
           className="text-2xl mb-8 text-slate-300"
         />
-        <div className="flex gap-5 w-full mt-2">
+        {/* <div className="flex gap-5 w-full mt-2">
           {header?.social?.map((socialNetwork) => {
             return (
               <a
@@ -71,7 +71,7 @@ const HeaderComponent: React.FC<PropsHeader> = ({ header }) => {
               </a>
             );
           })}
-        </div>
+        </div> */}
         <div className="flex gap-2 mt-4">
           <Button
             className="rounded-md bg-transparent border-2 border-slate-100"
