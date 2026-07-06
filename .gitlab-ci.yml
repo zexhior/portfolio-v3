@@ -12,7 +12,7 @@ build:
   stage: build
   image: docker:24
   services:
-    - docker:dind
+    - docker:24
   tags:
     - vps-portfolio
   script:
