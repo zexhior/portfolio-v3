@@ -292,7 +292,7 @@
           }
         ],
         "description": "A web application that allows users to order customized T-shirts by providing designs or texts to place on the T-shirt, with a demo feature allowing customers to preview their image on the T-shirt.",
-        "photo": ["Fabric"],
+        "photo": ["Fabric1", "Fabric2"],
         "link": "https://impression.brice-herizo.cloud/"
       }
     ]

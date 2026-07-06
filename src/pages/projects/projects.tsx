@@ -5,7 +5,8 @@ import CodeNameLogin from "@/assets/code-name/code-name-login.png";
 import CodeNameRoom from "@/assets/code-name/code-name-room.png";
 import ForageLogin from "@/assets/forage/forage-login.png";
 import ForageMap from "@/assets/forage/forage-map.png";
-import Fabric from "@/assets/fabric/fabric.png";
+import Fabric1 from "@/assets/fabric/mockup-impression-1.png";
+import Fabric2 from "@/assets/fabric/mockup-impression-2.png";
 import Title from "@/components/title";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { type ReactNode } from "react";
@@ -31,7 +32,8 @@ const photos: Record<string, string> = {
   ForageMap,
   CodeNameLogin,
   CodeNameRoom,
-  Fabric,
+  Fabric1,
+  Fabric2,
 };
 
 const Modal: React.FC<IModal> = ({ project, children, ...props }) => {
