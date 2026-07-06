@@ -2,35 +2,20 @@ stages:
   - build
   - deploy
 
-variables:
-  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
-
-# -------------------------
-# BUILD DOCKER IMAGE
-# -------------------------
-build:
-  stage: build
-  image: docker:24
-  services:
-    - docker:dind
-  tags:
-    - vps-docker
-  script:
-    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build -t $IMAGE_TAG .
-    - docker push $IMAGE_TAG
-
 # -------------------------
 # DEPLOY SUR VPS
 # -------------------------
 deploy:
   stage: deploy
+  image: alpine:latest
   tags:
     - vps-docker
   script:
-    - echo "Deploying..."
-    - ssh root@YOUR_VPS_IP "
-      cd /home/deploy/portfolio &&
-      docker compose pull &&
-      docker compose up -d
-      "
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - ssh -o StrictHostKeyChecking=yes "$SSH_USER@$SSH_HOST" "cd /home/deploy/portfolio && docker compose pull && docker compose up -d --remove-orphans"
+  only:
+    - main
