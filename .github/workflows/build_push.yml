@@ -58,7 +58,7 @@ jobs:
             docker rm ${{ secrets.VPS_CONTAINER_NAME }} || true
 
             # 4. Lancement du nouveau conteneur (ajustez les ports selon votre application)
-            docker run -d --name ${{ secrets.VPS_CONTAINER_NAME }} --restart always -p 5378:5378 ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.VPS_CONTAINER_NAME }}:latest
+            docker run -d --name ${{ secrets.VPS_CONTAINER_NAME }} --restart always -p 5173:5173 ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.VPS_CONTAINER_NAME }}:latest
 
             # 5. Nettoyage des anciennes images inutilisées pour libérer de l'espace
             docker image prune -f
