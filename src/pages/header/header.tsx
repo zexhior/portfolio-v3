@@ -4,7 +4,7 @@ import { animationFadeIn, animationFadeInRight } from "@/lib/style";
 import { Button } from "@/components/ui/button";
 import BlurText from "@/components/BlurText";
 import type { Header } from "@/lib/type";
-import { icons } from "@/lib/icons";
+// import { icons } from "@/lib/icons";
 
 interface PropsHeader {
   header?: Header;
@@ -41,7 +41,7 @@ const HeaderComponent: React.FC<PropsHeader> = ({ header }) => {
     document.body.removeChild(link);
   };
 
-  const size = 50;
+  // const size = 50;
 
   return (
     <div
