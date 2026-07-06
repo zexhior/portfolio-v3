@@ -1,6 +1,5 @@
 services:
   app:
-    build: ./
     image: portfolio
     container_name: portfolio-v3-dev
     ports:
